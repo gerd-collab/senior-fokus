@@ -116,7 +116,7 @@ export const APPS: readonly AppInfo[] = [
       'Schöne Postkarten-Motive wieder zusammensetzen. Puzzle in mehreren Stufen, ganz ohne Zeitdruck.',
     url: 'https://postkarten-puzzle.vercel.app/',
     screenshot: '/app-screenshots/postkarten-puzzle.png',
-    icon: '卡片',
+    icon: '🧩',
     accent: '#5B6B8C'
   },
   {
