@@ -87,12 +87,12 @@ export const APPS: readonly AppInfo[] = [
     accent: '#7A5C3A'
   },
   {
-    id: 'sprichtwortschatz',
+    id: 'sprichwortschatz',
     title: 'Sprichwort-Schatz',
     subtitle: 'Bekanntes ergänzen',
     description:
       '218 bekannte Sprichwörter und Redensarten ergänzen, zuordnen und verstehen – in vier Spielarten.',
-    url: 'https://sprichtwortschatz.vercel.app/',
+    url: 'https://sprichwortschatz.vercel.app/',
     screenshot: '/app-screenshots/sprichtwortschatz.png',
     icon: '💬',
     accent: '#A16207'
