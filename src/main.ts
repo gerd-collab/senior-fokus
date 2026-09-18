@@ -18,11 +18,16 @@ function esc(s: string): string {
   return d.innerHTML;
 }
 
+function norm(s: string): string {
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 function renderLanding(): void {
   document.title = 'Fokuspunkt – Apps für Senioren';
   const cards = APPS.map(
     (a) => `
     <button class="app-card" style="--card-accent: ${a.accent}" data-app="${a.id}"
+            data-search="${esc(norm(`${a.title} ${a.subtitle} ${a.description ?? ''}`))}"
             aria-label="${esc(a.title)} öffnen">
       <span class="app-preview">
         <img src="${esc(a.screenshot)}" alt="" loading="lazy">
@@ -41,8 +46,14 @@ function renderLanding(): void {
       <header class="landing-header">
         <h1>Fokuspunkt</h1>
         <p class="motto">Ruhige Beschäftigung und Training – zum Auswählen und Mitmachen.</p>
+        <div class="search-wrap">
+          <input id="appSearch" class="app-search" type="search" autocomplete="off"
+                 placeholder="Wonach suchen Sie? Zum Beispiel: Garten, Musik, Gedächtnis …"
+                 aria-label="Apps durchsuchen">
+        </div>
       </header>
       <main class="app-grid" role="list">${cards}</main>
+      <p class="no-results" hidden>Keine App gefunden. Bitte einen anderen Suchbegriff versuchen.</p>
       <footer class="landing-footer">
         Einfach eine Karte antippen. Ohne Anmeldung, ohne Werbung.
       </footer>
@@ -51,6 +62,22 @@ function renderLanding(): void {
   appEl.querySelectorAll<HTMLButtonElement>('[data-app]').forEach((btn) => {
     btn.addEventListener('click', () => openApp(btn.dataset.app ?? ''));
   });
+
+  const search = appEl.querySelector<HTMLInputElement>('#appSearch');
+  const grid = appEl.querySelector<HTMLElement>('.app-grid');
+  const noResults = appEl.querySelector<HTMLElement>('.no-results');
+  if (search && grid && noResults) {
+    search.addEventListener('input', () => {
+      const term = norm(search.value.trim());
+      let visible = 0;
+      grid.querySelectorAll<HTMLElement>('.app-card').forEach((card) => {
+        const hit = !term || (card.dataset.search ?? '').includes(term);
+        card.hidden = !hit;
+        if (hit) visible++;
+      });
+      noResults.hidden = visible > 0;
+    });
+  }
 }
 
 function renderEmbed(app: AppInfo): void {
