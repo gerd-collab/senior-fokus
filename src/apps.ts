@@ -276,9 +276,9 @@ export const APPS: readonly AppInfo[] = [
   {
     id: 'klanggarten',
     title: 'Klanggarten',
-    subtitle: 'Pflanzen zum Klingen bringen',
+    subtitle: 'Hören und umhergehen',
     description:
-      'Fünf wundersame Pflanzen, die beim Antippen klingen: Klangblatt, Saitenfarn, Glockenblüte, Taktgras und Flötenkelch. Aus jedem Ton wird ein eigener Garten-Song.',
+      'Ein begehbarer 3D-Garten: langsam über den Kiesweg gehen, mit der Maus umsehen und Objekte anklicken – Windspiel, Gartenglocke, Teich, Bienen und Vögel klingen zurück. Ohne Punkte, ohne Zeitdruck.',
     url: 'https://klanggarten.vercel.app/',
     screenshot: '/app-screenshots/klanggarten.png',
     icon: '🌿',
