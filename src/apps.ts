@@ -404,5 +404,16 @@ export const APPS: readonly AppInfo[] = [
     screenshot: '/app-screenshots/patience.png',
     icon: '🃏',
     accent: '#356B45'
+  },
+  {
+    id: 'tangram',
+    title: 'Tangram',
+    subtitle: 'Formen nachlegen',
+    description:
+      'Aus sieben farbigen Teilen – große, mittlere und kleine Dreiecke, Quadrat und Parallelogramm – eine vorgegebene Form nachlegen. Ganz in Ruhe und ohne Zeitdruck; „Neue Form" gibt die nächste Vorlage.',
+    url: 'https://tangram-gamma.vercel.app/',
+    screenshot: '/app-screenshots/tangram.png',
+    icon: '🔺',
+    accent: '#1F2A37'
   }
 ];
