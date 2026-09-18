@@ -285,17 +285,6 @@ export const APPS: readonly AppInfo[] = [
     accent: '#3F7D5A'
   },
   {
-    id: 'malzeit',
-    title: 'Malzeit',
-    subtitle: 'KI-Malbuch-Generator',
-    description:
-      'Aus einer Idee werden in Minuten persönliche Malseiten – als Buch für Kinder oder als ruhige Ausmalmotive für Erwachsene. Zum Ausdrucken und Entspannen.',
-    url: 'https://malzeit.vercel.app/',
-    screenshot: '/app-screenshots/malzeit.png',
-    icon: '🎨',
-    accent: '#A86BC0'
-  },
-  {
     id: 'farbenfreude',
     title: 'Farbenfreude',
     subtitle: 'Nach Zahlen malen',
