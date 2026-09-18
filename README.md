@@ -1,6 +1,6 @@
 # Fokuspunkt
 
-Launcher für Senioren-Apps (Vite + Vanilla TS). Übersichtsseite mit 36 Apps;
+Launcher für Senioren-Apps (Vite + Vanilla TS). Übersichtsseite mit 37 Apps;
 
 - Dev: `npm run dev`
 - Build: `npm run build`

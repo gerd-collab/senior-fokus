@@ -393,5 +393,16 @@ export const APPS: readonly AppInfo[] = [
     screenshot: '/app-screenshots/wuerfelrunde-zu-viert.png',
     icon: '🎲',
     accent: '#A9703C'
+  },
+  {
+    id: 'patience',
+    title: 'Große Patience',
+    subtitle: 'Karten in Ruhe ablegen',
+    description:
+      'Karten vom Ass bis zur Sechs ablegen, in aller Ruhe und ohne Zeitdruck. Mit großen Karten, Vorratsstapel und Hinweis-Taste – der Spielstand wird automatisch gespeichert.',
+    url: 'https://patience-1.vercel.app/',
+    screenshot: '/app-screenshots/patience.png',
+    icon: '🃏',
+    accent: '#356B45'
   }
 ];
