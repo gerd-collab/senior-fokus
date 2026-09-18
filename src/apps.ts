@@ -351,17 +351,6 @@ export const APPS: readonly AppInfo[] = [
     accent: '#A65E4A'
   },
   {
-    id: 'blumenstrauss',
-    title: 'Für dich',
-    subtitle: 'Ein Strauß voller Botschaften',
-    description:
-      'Ein digitaler Blumenstrauß: Blüten antippen und fünf versteckte Botschaften nach und nach entdecken. Eine kleine Aufmerksamkeit zum Verschenken.',
-    url: 'https://blumenstrauss.vercel.app/',
-    screenshot: '/app-screenshots/blumenstrauss.png',
-    icon: '💐',
-    accent: '#274060'
-  },
-  {
     id: 'atemgarten',
     title: 'Atemgarten',
     subtitle: 'Schauen und zur Ruhe kommen',
