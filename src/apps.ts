@@ -210,9 +210,9 @@ export const APPS: readonly AppInfo[] = [
   {
     id: 'muehle',
     title: 'Mühle',
-    subtitle: 'Drei Steine',
+    subtitle: 'Neun Steine',
     description:
-      'Der Mühle-Klassiker in ruhiger Drei-Steine-Form: Steine setzen und verschieben, Mühlen schließen. Zu zweit oder gegen den Computer.',
+      'Das vollständige Mühlespiel: neun Steine setzen, entlang der Linien ziehen, Mühlen schließen und einen Gegnerstein wegnehmen. Mit drei Steinen darf gesprungen werden – zu zweit oder gegen den Computer.',
     url: 'https://muehle-fawn.vercel.app/',
     screenshot: '/app-screenshots/muehle.png',
     icon: '⚙️',
