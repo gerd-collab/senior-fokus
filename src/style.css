@@ -56,9 +56,15 @@ a {
   flex-direction: column;
 }
 
+/* Titelbereich: eigener, farblich abgesetzter Hintergrund */
 .landing-header {
   text-align: center;
   margin-bottom: 2rem;
+  padding: 2.6rem 1.75rem;
+  border-radius: 28px;
+  background: var(--primary);
+  color: var(--primary-text);
+  box-shadow: 0 8px 24px rgba(47, 111, 95, 0.24);
 }
 
 .landing-header .hero-text {
@@ -72,7 +78,7 @@ a {
 }
 
 .landing-header .motto {
-  color: var(--text-soft);
+  color: #E3EFEA;
   font-size: 1.15rem;
   margin: 0.5rem auto 0;
   max-width: 62ch;
@@ -86,8 +92,8 @@ a {
   width: 5.5rem;
   height: 5.5rem;
   border-radius: 26px;
-  background: #EEF4F1;
-  border: 2px solid var(--border);
+  background: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   box-shadow: var(--shadow);
 }
 
@@ -127,7 +133,7 @@ a {
   gap: 0.5rem 0.9rem;
   margin: 1.5rem 0 0;
   padding: 0;
-  color: var(--text-soft);
+  color: #E3EFEA;
   font-size: 1.1rem;
 }
 
@@ -139,12 +145,12 @@ a {
 
 .usp-list li::before {
   content: '✓';
-  color: var(--primary);
+  color: #F2C89B;
   font-weight: bold;
 }
 
 .usp-list li + li {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-left: 0.9rem;
 }
 
@@ -647,6 +653,10 @@ a {
 /* ---------- Kleinere Bildschirme ---------- */
 
 @media (max-width: 640px) {
+  .landing-header {
+    padding: 1.9rem 1.25rem;
+    border-radius: 22px;
+  }
   .landing-header .hero-mark {
     width: 4.5rem;
     height: 4.5rem;
@@ -710,8 +720,6 @@ a {
     justify-content: center;
     gap: 2.75rem;
     text-align: left;
-    max-width: 76rem;
-    margin: 0 auto 2rem;
   }
   .landing-header .hero-mark {
     flex: none;

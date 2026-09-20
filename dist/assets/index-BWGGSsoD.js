@@ -73,7 +73,7 @@
         ${a}
         <div class="search-wrap">
           <input id="appSearch" class="app-search" type="search" autocomplete="off"
-                 placeholder="Wonach suchen Sie? Zum Beispiel: Garten, Musik, Gedächtnis …"
+                 placeholder="Wonach suchen Sie? Z. B. Garten, Musik …"
                  aria-label="Apps durchsuchen">
         </div>
         ${r}
