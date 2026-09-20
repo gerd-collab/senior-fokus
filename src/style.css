@@ -107,6 +107,131 @@ a {
   padding: 2.5rem 1rem;
 }
 
+/* ---------- Bereiche (fünf Tätigkeitsfelder) ---------- */
+
+.choice-question {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2rem 0 1.25rem;
+}
+
+.category-nav {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  background: var(--bg-soft);
+  border: 2px solid var(--border);
+  border-top: 6px solid var(--cat-accent, var(--primary));
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-tile:hover {
+  border-color: var(--cat-accent, var(--primary));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(43, 38, 32, 0.14);
+}
+
+.category-tile:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.category-tile[aria-pressed='true'] {
+  background: var(--cat-accent, var(--primary));
+  border-color: var(--cat-accent, var(--primary));
+  color: #fff;
+}
+
+.category-tile[aria-pressed='true'] .cat-claim {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.category-tile .cat-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.category-tile .cat-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.category-tile .cat-claim {
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.all-areas {
+  text-align: center;
+  margin: -1.25rem 0 2.5rem;
+}
+
+.all-areas-btn {
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.05rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.all-areas-btn:hover {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.all-areas-btn:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.category-section[hidden] {
+  display: none;
+}
+
+.category-section + .category-section {
+  margin-top: 3rem;
+}
+
+.category-header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.9rem;
+  color: var(--cat-accent, var(--primary));
+  margin: 0;
+}
+
+.category-header h2 .icon {
+  font-size: 1.6rem;
+}
+
+.category-claim {
+  color: var(--text-soft);
+  font-size: 1.2rem;
+  margin: 0.25rem 0 0;
+}
+
 .app-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -288,6 +413,15 @@ a {
   .landing-header h1 {
     font-size: 1.9rem;
   }
+  .choice-question {
+    font-size: 1.3rem;
+  }
+  .category-nav {
+    grid-template-columns: 1fr;
+  }
+  .category-header h2 {
+    font-size: 1.6rem;
+  }
   .app-grid {
     grid-template-columns: 1fr;
   }
@@ -300,6 +434,9 @@ a {
 }
 
 @media (min-width: 641px) and (max-width: 1050px) {
+  .category-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .app-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
