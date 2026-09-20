@@ -26,15 +26,23 @@ export interface CategoryInfo {
 export const CATEGORIES: readonly CategoryInfo[] = [
   {
     id: 'denken',
-    title: 'Denken',
+    title: 'Denken & Konzentration',
     claim: 'Rätsel, Zahlen, Logik, Konzentration',
     keywords: 'Denken Konzentration',
     icon: '💡',
     accent: '#4A7BA6'
   },
   {
+    id: 'spielen',
+    title: 'Spielen',
+    claim: 'Memory, Tangram, klassische Spiele, Geschicklichkeit',
+    keywords: 'Spielen Spiel',
+    icon: '🎲',
+    accent: '#B45309'
+  },
+  {
     id: 'wahrnehmen',
-    title: 'Wahrnehmen',
+    title: 'Wahrnehmen & Hören',
     claim: 'Klänge erkennen, Bilder vergleichen, Aufmerksamkeit',
     keywords: 'Wahrnehmung',
     icon: '👁️',
@@ -49,14 +57,6 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     accent: '#A16207'
   },
   {
-    id: 'spielen',
-    title: 'Spielen',
-    claim: 'Memory, Tangram, klassische Spiele, Geschicklichkeit',
-    keywords: 'Spielen Spiel',
-    icon: '🎲',
-    accent: '#B45309'
-  },
-  {
     id: 'entspannen',
     title: 'Entspannen & Entdecken',
     claim: 'Klanggarten, Musik, Malen, visuelle Umgebungen',
@@ -67,8 +67,7 @@ export const CATEGORIES: readonly CategoryInfo[] = [
 ];
 
 export const APPS: readonly AppInfo[] = [
-  // --- Denken ---
-
+  // --- Denken & Konzentration ---
   {
     id: 'schwedenraetsel',
     category: 'denken',
@@ -152,123 +151,7 @@ export const APPS: readonly AppInfo[] = [
     icon: '🪷',
     accent: '#2E6E62'
   },
-
-  // --- Wahrnehmen ---
-
-  {
-    id: 'klangdetektive',
-    category: 'wahrnehmen',
-    title: 'Klangdetektive',
-    subtitle: 'Geräusche erkennen',
-    screenshot: '/app-screenshots/klangdetektive-v2.png',
-    description:
-      'Echte Geräusche hören, erkennen und zuordnen. Ein Hörtraining in vier Spielvarianten.',
-    url: 'https://gerauesche-erkennen.vercel.app/',
-    icon: '👂',
-    accent: '#14304A'
-  },
-  {
-    id: 'klangfolge',
-    category: 'wahrnehmen',
-    title: 'Klangfolge',
-    subtitle: 'Töne merken',
-    description:
-      'Vier farbige Klangflächen, die eine Tonfolge spielen und von Ihnen nachgetippt wird. Vom einzelnen Ton bis zur langen Folge – Gedächtnis und Gehör sanft trainiert.',
-    url: 'https://klangfolge.vercel.app/',
-    screenshot: '/app-screenshots/klangfolge.png',
-    icon: '🎵',
-    accent: '#C77B4F'
-  },
-  {
-    id: 'postkarten-puzzle',
-    category: 'wahrnehmen',
-    title: 'Postkarten-Puzzle',
-    subtitle: 'Bilder zusammensetzen',
-    description:
-      'Schöne Postkarten-Motive wieder zusammensetzen. Puzzle in mehreren Stufen, ganz ohne Zeitdruck.',
-    url: 'https://postkarten-puzzle.vercel.app/',
-    screenshot: '/app-screenshots/postkarten-puzzle.png',
-    icon: '🧩',
-    accent: '#5B6B8C'
-  },
-  {
-    id: 'schiebebild',
-    category: 'wahrnehmen',
-    title: 'Schiebebild',
-    subtitle: 'Teil für Teil',
-    description:
-      'Bilder in Teilen: Teile antippen und aufs freie Feld schieben, bis das ganze Bild zu sehen ist. Mit Leuchtturm, Blumenfenster und Gartenbank.',
-    url: 'https://schiebebild.vercel.app/',
-    screenshot: '/app-screenshots/schiebebild.png',
-    icon: '🖼️',
-    accent: '#4F7D8C'
-  },
-  {
-    id: 'perlenfaden',
-    category: 'wahrnehmen',
-    title: 'Perlenfaden',
-    subtitle: 'Muster fädeln',
-    description:
-      'Perlen in Form und Farbe auswählen und auf den Faden fädeln – nach Muster oder frei. Ein ruhiges Spiel mit Mustern, Farben und Tönen.',
-    url: 'https://perlenfaden.vercel.app/',
-    screenshot: '/app-screenshots/perlenfaden.png',
-    icon: '📿',
-    accent: '#7A5FA0'
-  },
-
-  // --- Erinnern & Erzählen ---
-
-  {
-    id: 'kreatives-schreiben',
-    category: 'erinnern',
-    title: 'Wortgarten',
-    subtitle: 'Kreatives Schreiben',
-    description:
-      '40 liebevolle Bildimpulse zum Erinnern, Erzählen und kreativen Schreiben. In Ihrem eigenen Tempo.',
-    url: 'https://kreatives-schreiben.vercel.app/',
-    screenshot: '/app-screenshots/wortgarten.png',
-    icon: '🌱',
-    accent: '#6B8E4E'
-  },
-  {
-    id: 'gedeckter-tisch',
-    category: 'erinnern',
-    title: 'Der gedeckte Tisch',
-    subtitle: 'Sehen und merken',
-    description:
-      'Sehen, merken und erinnern: Welches Geschirr und Besteck gehört wohin? Ein Gedächtnistraining.',
-    url: 'https://der-gedeckte-tisch.vercel.app/',
-    screenshot: '/app-screenshots/gedeckter-tisch.png',
-    icon: '🍽️',
-    accent: '#5B3A26'
-  },
-  {
-    id: 'sprichwortschatz',
-    category: 'erinnern',
-    title: 'Sprichwort-Schatz',
-    subtitle: 'Bekanntes ergänzen',
-    description:
-      '218 bekannte Sprichwörter und Redensarten ergänzen, zuordnen und verstehen – in vier Spielarten.',
-    url: 'https://sprichwortschatz.vercel.app/',
-    screenshot: '/app-screenshots/sprichtwortschatz.png',
-    icon: '💬',
-    accent: '#A16207'
-  },
-  {
-    id: 'damals-und-heute',
-    category: 'erinnern',
-    title: 'Damals und heute',
-    subtitle: 'Dinge richtig zuordnen',
-    description:
-      'Gegenstände aus früher und heute erkennen und zuordnen. Erinnern und Gespräche anregen.',
-    url: 'https://damals-und-heute.vercel.app/',
-    screenshot: '/app-screenshots/damals-und-heute.png',
-    icon: '🕰️',
-    accent: '#6D4C2F'
-  },
-
   // --- Spielen ---
-
   {
     id: 'memory',
     category: 'spielen',
@@ -413,9 +296,117 @@ export const APPS: readonly AppInfo[] = [
     icon: '🏎️',
     accent: '#5B8C3E'
   },
-
+  // --- Wahrnehmen & Hören ---
+  {
+    id: 'klangdetektive',
+    category: 'wahrnehmen',
+    title: 'Klangdetektive',
+    subtitle: 'Geräusche erkennen',
+    screenshot: '/app-screenshots/klangdetektive-v2.png',
+    description:
+      'Echte Geräusche hören, erkennen und zuordnen. Ein Hörtraining in vier Spielvarianten.',
+    url: 'https://gerauesche-erkennen.vercel.app/',
+    icon: '👂',
+    accent: '#14304A'
+  },
+  {
+    id: 'klangfolge',
+    category: 'wahrnehmen',
+    title: 'Klangfolge',
+    subtitle: 'Töne merken',
+    description:
+      'Vier farbige Klangflächen, die eine Tonfolge spielen und von Ihnen nachgetippt wird. Vom einzelnen Ton bis zur langen Folge – Gedächtnis und Gehör sanft trainiert.',
+    url: 'https://klangfolge.vercel.app/',
+    screenshot: '/app-screenshots/klangfolge.png',
+    icon: '🎵',
+    accent: '#C77B4F'
+  },
+  {
+    id: 'postkarten-puzzle',
+    category: 'wahrnehmen',
+    title: 'Postkarten-Puzzle',
+    subtitle: 'Bilder zusammensetzen',
+    description:
+      'Schöne Postkarten-Motive wieder zusammensetzen. Puzzle in mehreren Stufen, ganz ohne Zeitdruck.',
+    url: 'https://postkarten-puzzle.vercel.app/',
+    screenshot: '/app-screenshots/postkarten-puzzle.png',
+    icon: '🧩',
+    accent: '#5B6B8C'
+  },
+  {
+    id: 'schiebebild',
+    category: 'wahrnehmen',
+    title: 'Schiebebild',
+    subtitle: 'Teil für Teil',
+    description:
+      'Bilder in Teilen: Teile antippen und aufs freie Feld schieben, bis das ganze Bild zu sehen ist. Mit Leuchtturm, Blumenfenster und Gartenbank.',
+    url: 'https://schiebebild.vercel.app/',
+    screenshot: '/app-screenshots/schiebebild.png',
+    icon: '🖼️',
+    accent: '#4F7D8C'
+  },
+  {
+    id: 'perlenfaden',
+    category: 'wahrnehmen',
+    title: 'Perlenfaden',
+    subtitle: 'Muster fädeln',
+    description:
+      'Perlen in Form und Farbe auswählen und auf den Faden fädeln – nach Muster oder frei. Ein ruhiges Spiel mit Mustern, Farben und Tönen.',
+    url: 'https://perlenfaden.vercel.app/',
+    screenshot: '/app-screenshots/perlenfaden.png',
+    icon: '📿',
+    accent: '#7A5FA0'
+  },
+  // --- Erinnern & Erzählen ---
+  {
+    id: 'kreatives-schreiben',
+    category: 'erinnern',
+    title: 'Wortgarten',
+    subtitle: 'Kreatives Schreiben',
+    description:
+      '40 liebevolle Bildimpulse zum Erinnern, Erzählen und kreativen Schreiben. In Ihrem eigenen Tempo.',
+    url: 'https://kreatives-schreiben.vercel.app/',
+    screenshot: '/app-screenshots/wortgarten.png',
+    icon: '🌱',
+    accent: '#6B8E4E'
+  },
+  {
+    id: 'gedeckter-tisch',
+    category: 'erinnern',
+    title: 'Der gedeckte Tisch',
+    subtitle: 'Sehen und merken',
+    description:
+      'Sehen, merken und erinnern: Welches Geschirr und Besteck gehört wohin? Ein Gedächtnistraining.',
+    url: 'https://der-gedeckte-tisch.vercel.app/',
+    screenshot: '/app-screenshots/gedeckter-tisch.png',
+    icon: '🍽️',
+    accent: '#5B3A26'
+  },
+  {
+    id: 'sprichwortschatz',
+    category: 'erinnern',
+    title: 'Sprichwort-Schatz',
+    subtitle: 'Bekanntes ergänzen',
+    description:
+      '218 bekannte Sprichwörter und Redensarten ergänzen, zuordnen und verstehen – in vier Spielarten.',
+    url: 'https://sprichwortschatz.vercel.app/',
+    screenshot: '/app-screenshots/sprichtwortschatz.png',
+    icon: '💬',
+    accent: '#A16207'
+  },
+  {
+    id: 'damals-und-heute',
+    category: 'erinnern',
+    title: 'Damals und heute',
+    subtitle: 'Dinge richtig zuordnen',
+    description:
+      'Gegenstände aus früher und heute erkennen und zuordnen. Erinnern und Gespräche anregen.',
+    url: 'https://damals-und-heute.vercel.app/',
+    screenshot: '/app-screenshots/damals-und-heute.png',
+    icon: '🕰️',
+    accent: '#6D4C2F'
+  },
   // --- Entspannen & Entdecken ---
-
   {
     id: 'klanggarten',
     category: 'entspannen',

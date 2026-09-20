@@ -70,12 +70,182 @@ a {
 .landing-header .motto {
   color: var(--text-soft);
   font-size: 1.15rem;
+  margin: 0.5rem auto 0;
+  max-width: 62ch;
+}
+
+.landing-header .hero-lead {
+  font-size: 1.85rem;
+  margin: 0.25rem 0 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+.usp-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.9rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
+.usp-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usp-list li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.usp-list li + li {
+  border-left: 1px solid var(--border);
+  padding-left: 0.9rem;
+}
+
+/* ---------- Zwei Einstiege (Zielgruppen) ---------- */
+
+.audience {
+  margin: 2.25rem 0 0.5rem;
+}
+
+.audience-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.audience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  background: var(--bg-soft);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.audience-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(43, 38, 32, 0.14);
+}
+
+.audience-card:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.audience-card[aria-pressed='true'] {
+  border-color: var(--primary);
+  background: #EEF4F1;
+}
+
+.audience-card .audience-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.audience-card .audience-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.audience-card .audience-claim {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.audience-panel {
+  max-width: 900px;
+  margin: 1.25rem auto 0;
+  background: var(--bg-soft);
+  border: 2px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+}
+
+.audience-lead {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.audience-points {
   margin: 0;
+  padding-left: 1.3rem;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
+.audience-points li + li {
+  margin-top: 0.3rem;
+}
+
+.audience-links {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.9rem;
+}
+
+.audience-links-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.audience-links-hint {
+  margin: 0.25rem 0 0.6rem;
+  color: var(--text-soft);
+  font-size: 1rem;
+}
+
+.audience-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.audience-links li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.audience-links li:first-child {
+  border-top: none;
+}
+
+.audience-links .link-area {
+  min-width: 13rem;
+  font-size: 1.05rem;
+}
+
+.audience-links code {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  word-break: break-all;
 }
 
 .search-wrap {
-  margin: 1.5rem auto 0;
+  width: 100%;
   max-width: 640px;
+  margin: 0 auto 2rem;
 }
 
 .app-search {
@@ -413,6 +583,24 @@ a {
   .landing-header h1 {
     font-size: 1.9rem;
   }
+  .landing-header .hero-lead {
+    font-size: 1.5rem;
+  }
+  .usp-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .usp-list li + li {
+    border-left: none;
+    padding-left: 0;
+  }
+  .audience-nav {
+    grid-template-columns: 1fr;
+  }
+  .audience-links .link-area {
+    min-width: 0;
+  }
   .choice-question {
     font-size: 1.3rem;
   }
@@ -430,6 +618,13 @@ a {
   }
   .embed-subtitle {
     display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  /* Zweizeilige Bereichsnamen reservieren, damit die Zuschnitte bündig stehen */
+  .category-tile .cat-title {
+    min-height: 3.4rem;
   }
 }
 

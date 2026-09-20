@@ -1,11 +1,50 @@
 import { APPS, CATEGORIES, type AppInfo, type CategoryId, type CategoryInfo } from './apps';
 
+type Audience = 'privat' | 'einrichtung';
+
+interface AudienceInfo {
+  readonly id: Audience;
+  readonly icon: string;
+  readonly title: string;
+  readonly claim: string;
+  readonly lead: string;
+  readonly points: readonly string[];
+}
+
+const AUDIENCES: readonly AudienceInfo[] = [
+  {
+    id: 'privat',
+    icon: '🏠',
+    title: 'Für Senioren & Angehörige',
+    claim: 'Zuhause ausprobieren und gemeinsam spielen',
+    lead: 'App antippen und loslegen – keine Anmeldung, keine Installation.',
+    points: [
+      'Große Bedienflächen, keine komplizierten Menüs',
+      'Kein Zeitdruck: Pausen sind jederzeit möglich',
+      'Viele Apps lassen sich zu zweit an einem Gerät spielen'
+    ]
+  },
+  {
+    id: 'einrichtung',
+    icon: '🏫',
+    title: 'Für Einrichtungen',
+    claim: 'Digitale Aktivierung für Gruppen und Einzelbetreuung',
+    lead: 'Alles läuft im Browser, ohne Installation und ohne Anmeldung – der Bildschirm genügt.',
+    points: [
+      'Geeignet für Einzelbetreuung, Gruppenstunden und Besuchsdienste',
+      'Spiele zu zweit oder zu mehreren an einem Gerät',
+      'Auch für Menschen mit Demenz oder kognitiven Einschränkungen – als zusätzlicher Anwendungsfall neben Spiel, Wahrnehmung und Entspannung'
+    ]
+  }
+];
+
 const appEl = document.getElementById('app') as HTMLElement;
 const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c])) as Record<
   CategoryId,
   CategoryInfo
 >;
 let currentCategory: CategoryId | null = null;
+let currentAudience: Audience | null = null;
 
 function getParam(name: string): string | null {
   return new URLSearchParams(window.location.search).get(name);
@@ -15,12 +54,25 @@ function isCategoryId(value: string | null): value is CategoryId {
   return value !== null && value in CATEGORY_BY_ID;
 }
 
-function setURL(appId: string | null, categoryId: CategoryId | null): void {
+function isAudience(value: string | null): value is Audience {
+  return value !== null && AUDIENCES.some((a) => a.id === value);
+}
+
+function setURL(
+  appId: string | null,
+  categoryId: CategoryId | null,
+  audience: Audience | null
+): void {
   const params = new URLSearchParams();
   if (appId) params.set('app', appId);
-  else if (categoryId) params.set('bereich', categoryId);
+  if (categoryId) params.set('bereich', categoryId);
+  if (audience) params.set('ziel', audience);
   const query = params.toString();
-  window.history.pushState({ app: appId, bereich: categoryId }, '', query ? `/?${query}` : '/');
+  window.history.pushState(
+    { app: appId, bereich: categoryId, ziel: audience },
+    '',
+    query ? `/?${query}` : '/'
+  );
 }
 
 function esc(s: string): string {
@@ -51,10 +103,55 @@ function appCard(a: AppInfo, category: CategoryInfo): string {
     </button>`;
 }
 
-function renderLanding(category: CategoryId | null): void {
+function bereichsLinks(): string {
+  const origin = window.location.origin;
+  const links = CATEGORIES.map(
+    (c) => `
+        <li>
+          <span class="link-area">${esc(c.title)}</span>
+          <code>${esc(`${origin}/?bereich=${c.id}`)}</code>
+        </li>`
+  ).join('');
+  return `
+      <div class="audience-links">
+        <p class="audience-links-title">Bereichslinks zum Weitergeben</p>
+        <p class="audience-links-hint">
+          Jeder Bereich hat eine eigene Adresse. Link kopieren und an die Gruppe schicken –
+          die Seite öffnet sich direkt im gewählten Bereich.
+        </p>
+        <ul>${links}</ul>
+      </div>`;
+}
+
+function audiencePanel(audience: Audience | null): string {
+  const info = AUDIENCES.find((a) => a.id === audience);
+  if (!info) return '';
+  const points = info.points.map((p) => `<li>${esc(p)}</li>`).join('');
+  return `
+      <div class="audience-panel">
+        <p class="audience-lead">${esc(info.lead)}</p>
+        <ul class="audience-points">${points}</ul>
+        ${info.id === 'einrichtung' ? bereichsLinks() : ''}
+      </div>`;
+}
+
+function renderLanding(category: CategoryId | null, audience: Audience | null): void {
   currentCategory = category;
+  currentAudience = audience;
   const active = category ? CATEGORY_BY_ID[category] : null;
-  document.title = active ? `${active.title} – Fokuspunkt` : 'Fokuspunkt – Apps für Senioren';
+  document.title = active
+    ? `${active.title} – Fokuspunkt`
+    : 'Fokuspunkt – Interaktive Apps für Senioren';
+
+  const audienceCards = AUDIENCES.map(
+    (a) => `
+      <button class="audience-card" type="button" data-audience="${a.id}"
+              aria-pressed="${a.id === audience}">
+        <span class="audience-icon" aria-hidden="true">${a.icon}</span>
+        <span class="audience-title">${esc(a.title)}</span>
+        <span class="audience-claim">${esc(a.claim)}</span>
+      </button>`
+  ).join('');
 
   const tiles = CATEGORIES.map(
     (c) => `
@@ -68,7 +165,9 @@ function renderLanding(category: CategoryId | null): void {
 
   const sections = CATEGORIES.filter((c) => !category || c.id === category)
     .map((c) => {
-      const cards = APPS.filter((a) => a.category === c.id).map((a) => appCard(a, c)).join('');
+      const cards = APPS.filter((a) => a.category === c.id)
+        .map((a) => appCard(a, c))
+        .join('');
       return `
       <section class="category-section" id="bereich-${c.id}" style="--cat-accent: ${c.accent}">
         <header class="category-header">
@@ -84,14 +183,28 @@ function renderLanding(category: CategoryId | null): void {
     <div class="landing">
       <header class="landing-header">
         <h1>Fokuspunkt</h1>
-        <p class="motto">Ruhige Beschäftigung und Training – zum Auswählen und Mitmachen.</p>
-        <div class="search-wrap">
-          <input id="appSearch" class="app-search" type="search" autocomplete="off"
-                 placeholder="Wonach suchen Sie? Zum Beispiel: Garten, Musik, Gedächtnis …"
-                 aria-label="Apps durchsuchen">
-        </div>
+        <p class="hero-lead">Aktiv bleiben. Neugierig bleiben.</p>
+        <p class="motto">
+          Interaktive Spiele, Denkaufgaben und digitale Erlebnisse für Senioren –
+          einfach zu bedienen, abwechslungsreich und ohne Zeitdruck.
+        </p>
+        <p class="motto">Für zuhause, Seniorengruppen und Einrichtungen.</p>
+        <ul class="usp-list">
+          <li>Einfach bedienen</li>
+          <li>Direkt im Browser</li>
+          <li>Ohne Leistungsdruck</li>
+        </ul>
       </header>
+      <section class="audience" aria-label="Zielgruppen">
+        <div class="audience-nav">${audienceCards}</div>
+        ${audiencePanel(audience)}
+      </section>
       <p class="choice-question">Was möchten Sie heute machen?</p>
+      <div class="search-wrap">
+        <input id="appSearch" class="app-search" type="search" autocomplete="off"
+               placeholder="Wonach suchen Sie? Zum Beispiel: Garten, Musik, Gedächtnis …"
+               aria-label="Apps durchsuchen">
+      </div>
       <nav class="category-nav" aria-label="Bereiche">${tiles}</nav>
       ${
         category
@@ -113,14 +226,23 @@ function renderLanding(category: CategoryId | null): void {
     btn.addEventListener('click', () => {
       const id = btn.dataset.category as CategoryId;
       const next = id === currentCategory ? null : id;
-      setURL(null, next);
-      renderLanding(next);
+      setURL(null, next, currentAudience);
+      renderLanding(next, currentAudience);
+    });
+  });
+
+  appEl.querySelectorAll<HTMLButtonElement>('[data-audience]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.audience as Audience;
+      const next = id === currentAudience ? null : id;
+      setURL(null, currentCategory, next);
+      renderLanding(currentCategory, next);
     });
   });
 
   document.getElementById('allAreasBtn')?.addEventListener('click', () => {
-    setURL(null, null);
-    renderLanding(null);
+    setURL(null, null, currentAudience);
+    renderLanding(null, currentAudience);
   });
 
   const search = appEl.querySelector<HTMLInputElement>('#appSearch');
@@ -165,15 +287,15 @@ function renderEmbed(app: AppInfo): void {
     </div>`;
 
   document.getElementById('backBtn')?.addEventListener('click', () => {
-    setURL(null, currentCategory);
-    renderLanding(currentCategory);
+    setURL(null, currentCategory, currentAudience);
+    renderLanding(currentCategory, currentAudience);
   });
 }
 
 function openApp(id: string): void {
   const app = APPS.find((a) => a.id === id);
   if (!app) return;
-  setURL(id, currentCategory);
+  setURL(id, currentCategory, currentAudience);
   renderEmbed(app);
 }
 
@@ -185,11 +307,19 @@ function syncFromURL(): void {
     return;
   }
   const rawCategory = getParam('bereich');
-  if (rawApp || (rawCategory && !isCategoryId(rawCategory))) {
-    // Unknown app or area: clean URL without extra history entry
-    window.history.replaceState({ app: null, bereich: null }, '', '/');
+  const rawAudience = getParam('ziel');
+  const clean =
+    (rawApp !== null && !app) ||
+    (rawCategory !== null && !isCategoryId(rawCategory)) ||
+    (rawAudience !== null && !isAudience(rawAudience));
+  if (clean) {
+    // Unknown app, area or audience: clean URL without extra history entry
+    window.history.replaceState({ app: null, bereich: null, ziel: null }, '', '/');
   }
-  renderLanding(isCategoryId(rawCategory) ? rawCategory : null);
+  renderLanding(
+    isCategoryId(rawCategory) ? rawCategory : null,
+    isAudience(rawAudience) ? rawAudience : null
+  );
 }
 
 window.addEventListener('popstate', syncFromURL);
