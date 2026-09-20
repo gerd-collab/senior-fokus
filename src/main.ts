@@ -38,6 +38,16 @@ const AUDIENCES: readonly AudienceInfo[] = [
   }
 ];
 
+/** Symbol des Titelbereichs: Fokuspunkt als Ring-Marke. */
+const HERO_MARK = `
+        <span class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <circle class="ring-outer" cx="32" cy="32" r="29" />
+            <circle class="ring-inner" cx="32" cy="32" r="19" />
+            <circle class="dot" cx="32" cy="32" r="9" />
+          </svg>
+        </span>`;
+
 const appEl = document.getElementById('app') as HTMLElement;
 const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map((c) => [c.id, c])) as Record<
   CategoryId,
@@ -182,17 +192,14 @@ function renderLanding(category: CategoryId | null, audience: Audience | null): 
   appEl.innerHTML = `
     <div class="landing">
       <header class="landing-header">
+        ${HERO_MARK}
         <h1>Fokuspunkt</h1>
-        <p class="hero-lead">Aktiv bleiben. Neugierig bleiben.</p>
-        <p class="motto">
-          Interaktive Spiele, Denkaufgaben und digitale Erlebnisse für Senioren –
-          einfach zu bedienen, abwechslungsreich und ohne Zeitdruck.
-        </p>
-        <p class="motto">Für zuhause, Seniorengruppen und Einrichtungen.</p>
+        <p class="hero-lead">Spiele und Denkaufgaben für Senioren</p>
+        <p class="motto">Einfach ausprobieren: Karte antippen und losspielen.</p>
         <ul class="usp-list">
-          <li>Einfach bedienen</li>
-          <li>Direkt im Browser</li>
-          <li>Ohne Leistungsdruck</li>
+          <li>Große Schaltflächen</li>
+          <li>Ohne Anmeldung</li>
+          <li>Kein Zeitdruck</li>
         </ul>
       </header>
       <section class="audience" aria-label="Zielgruppen">

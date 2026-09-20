@@ -74,9 +74,44 @@ a {
   max-width: 62ch;
 }
 
+/* Symbol des Titelbereichs */
+.landing-header .hero-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 26px;
+  background: #EEF4F1;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.landing-header .hero-mark svg {
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.landing-header .hero-mark .ring-outer {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2.5;
+  opacity: 0.3;
+}
+
+.landing-header .hero-mark .ring-inner {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3.5;
+}
+
+.landing-header .hero-mark .dot {
+  fill: var(--focus);
+}
+
 .landing-header .hero-lead {
   font-size: 1.85rem;
-  margin: 0.25rem 0 0.75rem;
+  margin: 0.9rem 0 0.75rem;
   letter-spacing: 0.3px;
 }
 
@@ -580,6 +615,15 @@ a {
 /* ---------- Kleinere Bildschirme ---------- */
 
 @media (max-width: 640px) {
+  .landing-header .hero-mark {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 22px;
+  }
+  .landing-header .hero-mark svg {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
   .landing-header h1 {
     font-size: 1.9rem;
   }
