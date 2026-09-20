@@ -61,6 +61,10 @@ a {
   margin-bottom: 2rem;
 }
 
+.landing-header .hero-text {
+  display: contents;
+}
+
 .landing-header h1 {
   font-size: 2.4rem;
   margin: 0 0 0.5rem;
@@ -669,6 +673,44 @@ a {
   /* Zweizeilige Bereichsnamen reservieren, damit die Zuschnitte bündig stehen */
   .category-tile .cat-title {
     min-height: 3.4rem;
+  }
+}
+
+/* Titelbereich zweispaltig: links das Symbol, rechts der Text */
+
+@media (min-width: 900px) {
+  .landing-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.75rem;
+    text-align: left;
+    max-width: 76rem;
+    margin: 0 auto 2rem;
+  }
+  .landing-header .hero-mark {
+    flex: none;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 32px;
+  }
+  .landing-header .hero-mark svg {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+  .landing-header .hero-text {
+    display: block;
+    max-width: 44rem;
+  }
+  .landing-header .hero-lead {
+    margin-top: 0.25rem;
+  }
+  .landing-header .motto {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .landing-header .usp-list {
+    justify-content: flex-start;
   }
 }
 

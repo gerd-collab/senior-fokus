@@ -58,14 +58,16 @@
     <div class="landing">
       <header class="landing-header">
         ${T}
-        <h1>Fokuspunkt</h1>
-        <p class="hero-lead">Spiele und Denkaufgaben für Senioren</p>
-        <p class="motto">Einfach ausprobieren: Karte antippen und losspielen.</p>
-        <ul class="usp-list">
-          <li>Große Schaltflächen</li>
-          <li>Ohne Anmeldung</li>
-          <li>Kein Zeitdruck</li>
-        </ul>
+        <div class="hero-text">
+          <h1>Fokuspunkt</h1>
+          <p class="hero-lead">Spiele und Denkaufgaben für Senioren</p>
+          <p class="motto">Einfach ausprobieren: Karte antippen und losspielen.</p>
+          <ul class="usp-list">
+            <li>Große Schaltflächen</li>
+            <li>Ohne Anmeldung</li>
+            <li>Kein Zeitdruck</li>
+          </ul>
+        </div>
       </header>
       <section class="audience" aria-label="Zielgruppen">
         <div class="audience-nav">${a}</div>
