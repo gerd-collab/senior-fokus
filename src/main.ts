@@ -153,7 +153,7 @@ function renderLanding(category: CategoryId | null, audience: Audience | null): 
     ? `${active.title} – Fokuspunkt`
     : 'Fokuspunkt – Interaktive Apps für Senioren';
 
-  const audienceCards = AUDIENCES.map(
+  const [audienceLeft, audienceRight] = AUDIENCES.map(
     (a) => `
       <button class="audience-card" type="button" data-audience="${a.id}"
               aria-pressed="${a.id === audience}">
@@ -161,7 +161,7 @@ function renderLanding(category: CategoryId | null, audience: Audience | null): 
         <span class="audience-title">${esc(a.title)}</span>
         <span class="audience-claim">${esc(a.claim)}</span>
       </button>`
-  ).join('');
+  );
 
   const tiles = CATEGORIES.map(
     (c) => `
@@ -204,16 +204,17 @@ function renderLanding(category: CategoryId | null, audience: Audience | null): 
           </ul>
         </div>
       </header>
-      <section class="audience" aria-label="Zielgruppen">
-        <div class="audience-nav">${audienceCards}</div>
-        ${audiencePanel(audience)}
-      </section>
-      <p class="choice-question">Was möchten Sie heute machen?</p>
-      <div class="search-wrap">
-        <input id="appSearch" class="app-search" type="search" autocomplete="off"
-               placeholder="Wonach suchen Sie? Zum Beispiel: Garten, Musik, Gedächtnis …"
-               aria-label="Apps durchsuchen">
+      <div class="head-bar">
+        ${audienceLeft}
+        <div class="search-wrap">
+          <input id="appSearch" class="app-search" type="search" autocomplete="off"
+                 placeholder="Wonach suchen Sie? Z. B. Garten, Musik …"
+                 aria-label="Apps durchsuchen">
+        </div>
+        ${audienceRight}
       </div>
+      ${audiencePanel(audience)}
+      <p class="choice-question">Was möchten Sie heute machen?</p>
       <nav class="category-nav" aria-label="Bereiche">${tiles}</nav>
       ${
         category
