@@ -93,15 +93,52 @@ export const APPS: readonly AppInfo[] = [
     accent: '#7C4A21'
   },
   {
-    id: 'gut-vorbereitet',
+    id: 'ganze-aufgabe',
     category: 'denken',
-    title: 'Gut vorbereitet',
-    subtitle: 'Was brauche ich?',
-    description: '',
-    url: 'https://was-brauche-ich.vercel.app/',
-    screenshot: '/app-screenshots/gut-vorbereitet.png',
-    icon: '🎒',
+    title: 'Eine ganze Aufgabe lösen',
+    subtitle: 'Schritt für Schritt',
+    description:
+      'Eine Aufgabe in ruhigen Schritten von Anfang bis Ende durchziehen. Konzentration ohne Zeitdruck.',
+    url: 'https://ganze-aufgabe.vercel.app/',
+    screenshot: '/app-screenshots/ganze-aufgabe.png',
+    icon: '🧭',
     accent: '#1F3A5F'
+  },
+  {
+    id: 'was-gehoert-nicht-dazu',
+    category: 'denken',
+    title: 'Was gehört nicht dazu?',
+    subtitle: 'Finden und ordnen',
+    description:
+      'Vier Bilder, eines passt nicht: genau hinschauen, vergleichen und das Fremde finden.',
+    url: 'https://was-gehoert-nicht-dazu.vercel.app/',
+    screenshot: '/app-screenshots/was-gehoert-nicht-dazu.png',
+    icon: '🔍',
+    accent: '#4A7BA6'
+  },
+  {
+    id: 'reihenfolge',
+    category: 'denken',
+    title: 'Die richtige Reihenfolge',
+    subtitle: 'Ordnen und planen',
+    description:
+      'Schritte in die richtige Ordnung bringen – vom ersten bis zum letzten Handgriff.',
+    url: 'https://reihenfolge.vercel.app/',
+    screenshot: '/app-screenshots/reihenfolge.png',
+    icon: '🔢',
+    accent: '#5B3A26'
+  },
+  {
+    id: 'was-brauche-ich',
+    category: 'denken',
+    title: 'Was brauche ich?',
+    subtitle: 'Auswählen und vorbereiten',
+    description:
+      'Was gehört zur Aufgabe? Die richtigen Dinge aussuchen, bevor es losgeht.',
+    url: 'https://was-brauche-ich-yfze.vercel.app/',
+    screenshot: '/app-screenshots/was-brauche-ich.png',
+    icon: '🎒',
+    accent: '#7C4A21'
   },
   {
     id: 'wochenmarkt',
