@@ -171,7 +171,7 @@ export const APPS: readonly AppInfo[] = [
     subtitle: 'Wörter erraten',
     description:
       'Ein verstecktes Wort Buchstabe für Buchstabe erraten – in Blumenform und mit ruhigen Motiven. Große Tasten, ohne Zeitdruck.',
-    url: 'https://wortbl-te.vercel.app/',
+    url: 'https://wortbluete.vercel.app/',
     screenshot: '/app-screenshots/wortbluete.png',
     icon: '🌸',
     accent: '#C2417B'
