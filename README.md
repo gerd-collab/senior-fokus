@@ -23,7 +23,8 @@ Child-iframes – beim App-Wechsel playing der Track daher nahtlos weiter.
   `public/audio/music/<kategorie>/`, Kategorien: `piano`, `ambient`,
   `acoustic`, `nature`, `light`. Playlist + Zufallsreihenfolge aus
   `manifest.json`, Quasi-Gapless per Crossfade von zwei Audio-Decks.
-- **UI:** Musik-Pill oben rechts (Button + Lautstärke-Regler + Titel).
+- **UI:** Musik-Pill oben rechts (Vor/Zurück + Play + Lautstärke-Regler +
+  Titel). Vor/Zurück nutzt eine Spielhistorie mit Forward-Stapel.
 - **Zustand:** `localStorage` → gilt global für alle Apps
   (`fokuspunkt-music` = on/off, `fokuspunkt-music-volume` = 0..1).
 - **Neu generieren:** `python3 tools/genmusic/gen.py --per 24

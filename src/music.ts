@@ -65,6 +65,9 @@ class MusicEngine {
   private fadeTimer: number | null = null;
   private crossfading = false;
   private cfStart = 0;
+  private history: number[] = [];
+  private forward: number[] = [];
+  private current = -1;
   ready = false;
   onTrack: (t: Track | null) => void = () => {};
   onPlaying: (p: boolean) => void = () => {};
@@ -75,7 +78,7 @@ class MusicEngine {
       // Zeitsteuerung auf BEIDEN Decks: nach jedem Wechsel ist ein anderes aktiv.
       d.addEventListener('timeupdate', () => this.scheduleNext());
       d.addEventListener('error', () => {
-        if (d === this.decks[this.active] && this.playing) this.next();
+        if (d === this.decks[this.active] && this.playing) this.skipForward();
       });
     }
   }
@@ -180,10 +183,14 @@ class MusicEngine {
     this.stopTimerIfIdle();
   }
 
-  /** Naechster Track: auf dem inaktiven Deck starten, linear crossgeblendet. */
-  private next() {
+  /** Blendet zum Track idx; record=false bei Spruengen aus der Historie. */
+  private crossfadeTo(idx: number, record = true) {
     if (!this.ready || this.crossfading) return;
-    const idx = this.pickNext();
+    if (record && this.current >= 0 && this.current !== idx) {
+      this.history.push(this.current);
+      if (this.history.length > 60) this.history.shift();
+    }
+    this.current = idx;
     const track = this.tracks[idx];
     const to = this.decks[1 - this.active];
     to.src = this.url(track);
@@ -198,11 +205,43 @@ class MusicEngine {
     this.onTrack(track);
   }
 
+  /** Vorwaerts auf einen frischen Shuffle-Track (auch bei Ladefehler). */
+  private skipForward() {
+    this.forward.length = 0;
+    this.crossfadeTo(this.pickNext());
+  }
+
+  /** Manuell "weiter": zuerst Vorwaerts-Stapel aus Zurueck-Sprungen abarbeiten. */
+  next() {
+    if (!this.ready || this.crossfading) return;
+    if (this.forward.length) {
+      this.crossfadeTo(this.forward.pop()!, false);
+    } else {
+      this.skipForward();
+    }
+  }
+
+  /** Manuell "zurueck": letzter Titel; ohne Historie aktuellen Titel neu starten. */
+  prev() {
+    if (!this.ready || this.crossfading) return;
+    if (!this.history.length) {
+      try {
+        this.decks[this.active].currentTime = 0;
+      } catch {
+        /* Deck noch nicht bereitbar */
+      }
+      return;
+    }
+    const idx = this.history.pop()!;
+    if (this.current >= 0) this.forward.push(this.current);
+    this.crossfadeTo(idx, false);
+  }
+
   /** Zeitsteuerung des aktiven Decks: Wechsel kurz vor Trackende. */
   private scheduleNext() {
     const d = this.decks[this.active];
     if (!this.playing || this.crossfading || !d.duration || isNaN(d.duration)) return;
-    if (d.duration - d.currentTime <= PRELOAD_AHEAD_S) this.next();
+    if (d.duration - d.currentTime <= PRELOAD_AHEAD_S) this.crossfadeTo(this.pickNext());
   }
 
   async start(): Promise<boolean> {
@@ -212,6 +251,7 @@ class MusicEngine {
     const d = this.decks[this.active];
     d.src = this.url(this.tracks[idx]);
     d.trackIndex = idx;
+    this.current = idx;
     this.onTrack(this.tracks[idx]);
     this.playing = true;
     this.applyVolumes();
@@ -284,9 +324,23 @@ const ICON_OFF = `
     <line x1="3.5" y1="21" x2="21" y2="3.5" stroke="#C75B12" stroke-width="2.4"/>
   </svg>`;
 
+const ICON_PREV = `
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
+       stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 5l-7 7 7 7"/>
+  </svg>`;
+
+const ICON_NEXT = `
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
+       stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 5l7 7-7 7"/>
+  </svg>`;
+
 function buildPill(): {
   pill: HTMLElement;
   btn: HTMLButtonElement;
+  prevBtn: HTMLButtonElement;
+  nextBtn: HTMLButtonElement;
   slider: HTMLInputElement;
   title: HTMLElement;
 } {
@@ -295,15 +349,20 @@ function buildPill(): {
   pill.id = 'musicPill';
   pill.hidden = true;
   pill.innerHTML = `
+    <button class="music-nav" type="button" aria-label="Vorheriger Titel">${ICON_PREV}</button>
     <button class="music-btn" type="button" aria-pressed="false"
             title="Hintergrundmusik an- oder ausschalten">${ICON_OFF}</button>
+    <button class="music-nav" type="button" aria-label="Nächster Titel">${ICON_NEXT}</button>
     <input class="music-vol" type="range" min="0" max="100" step="1"
-           aria-label="Lautst\u00e4rke der Hintergrundmusik">
+           aria-label="Lautstärke der Hintergrundmusik">
     <span class="music-title" aria-live="polite"></span>`;
   document.body.appendChild(pill);
+  const navs = pill.querySelectorAll<HTMLButtonElement>('.music-nav');
   return {
     pill,
     btn: pill.querySelector('.music-btn') as HTMLButtonElement,
+    prevBtn: navs[0],
+    nextBtn: navs[1],
     slider: pill.querySelector('.music-vol') as HTMLInputElement,
     title: pill.querySelector('.music-title') as HTMLElement,
   };
@@ -346,6 +405,19 @@ export function initMusic(): void {
     }
     paint();
   });
+
+  // Vor/Zurück: im gestoppten Zustand starten sie die Wiedergabe.
+  const nav = (fn: () => void) => {
+    if (!music.playing) {
+      userOn = true;
+      localStorage.setItem(LS_STATE, 'on');
+      void music.start().then(paint);
+      return;
+    }
+    fn();
+  };
+  ui.prevBtn.addEventListener('click', () => nav(() => music.prev()));
+  ui.nextBtn.addEventListener('click', () => nav(() => music.next()));
 
   ui.slider.addEventListener('input', () => {
     music.setVolume(Number(ui.slider.value) / 100);
