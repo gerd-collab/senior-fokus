@@ -19,16 +19,18 @@ jede App in `APPS` trägt ihre `category`.
 Die Musik läuft ausschließlich im Parent (`src/music.ts`), nie in den
 Child-iframes – beim App-Wechsel playing der Track daher nahtlos weiter.
 
-- **Bibliothek:** 120 generative Stücke (Opus, je ~2–4 min) in
-  `public/audio/music/<kategorie>/`, Kategorien: `piano`, `ambient`,
-  `acoustic`, `nature`, `light`. Playlist + Zufallsreihenfolge aus
+- **Bibliothek:** 28 Meditationstracks (MP3, je 1–26 min, ~165 min
+  Spielzeit) von Pixabay in `public/audio/music/pixabay/`, lautheits-
+  normalisiert auf −20 LUFS. Playlist + Zufallsreihenfolge aus
   `manifest.json`, Quasi-Gapless per Crossfade von zwei Audio-Decks.
+  Lizenznachweise: `public/audio/music/PIXABAY-LIZENZ.txt`.
 - **UI:** Musik-Pill oben rechts (Vor/Zurück + Play + Lautstärke-Regler +
   Titel). Vor/Zurück nutzt eine Spielhistorie mit Forward-Stapel.
 - **Zustand:** `localStorage` → gilt global für alle Apps
   (`fokuspunkt-music` = on/off, `fokuspunkt-music-volume` = 0..1).
-- **Neu generieren:** `python3 tools/genmusic/gen.py --per 24
-  --out public/audio/music --jobs 6` (rein numpy + ffmpeg, kein Modell).
+- **Austauschen:** neue MP3s nach `public/audio/music/pixabay/` legen und
+  `manifest.json` (Felder `file`, `seconds`, `title`, `category`)
+  entsprechend aktualisieren.
 - **Offline:** Service Worker (`public/sw.js`) cacht jede Audiodatei nach
   dem ersten Stream in Cache Storage; Range-Bitten werden aus dem Cache
   bedient.

@@ -1,0 +1,47 @@
+Hintergrundmusik Fokuspunkt – Lizenznachweis
+============================================
+
+Quelle: Pixabay (https://pixabay.com/), heruntergeladen am 25.09.2026.
+Lizenz: Pixabay Content License
+https://pixabay.com/service/license-summary/
+Die Tracks dürfen kostenlos und ohne Namensnennung für Web-Apps verwendet
+werden. Eine Weitervermietung/Verbreitung der Audiodateien als eigenständige
+Sammlung ist nicht gestattet.
+
+Hinweis Content ID: Einige Titel sind bei Content ID registriert. Für
+Fokuspunkt/Web-Apps ist die Nutzung unproblematisch; NICHT in
+YouTube-Videos einsetzen, ohne einen möglichen Content-ID-Anspruch vorher
+zu testen.
+
+Bearbeitung: Lautheit normalisiert auf ca. -20 LUFS (ffmpeg loudnorm),
+MP3 (lame VBR), 44,1 kHz. Am Ton selbst wurde nichts geändert.
+
+Tracks (Dateiname <- Originaltitel von Pixabay):
+pixabay/487537.mp3  <- Meditations — MiroMaxMusic  |  3:22  |  https://pixabay.com/music/meditationspiritual-meditations-487537/
+pixabay/550885.mp3  <- Meditation Music — Verclub_Music (8:42)  |  8:42  |  https://pixabay.com/music/meditationspiritual-meditation-music-550885/
+pixabay/523576.mp3  <- Meditation - Meditation Music — leberch  |  5:24  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-523576/
+pixabay/510292.mp3  <- Meditation — leberch (5:28)  |  5:28  |  https://pixabay.com/music/meditationspiritual-meditation-510292/
+pixabay/509071.mp3  <- Meditation — leberch (2:54)  |  2:54  |  https://pixabay.com/music/meditationspiritual-meditation-509071/
+pixabay/547905.mp3  <- Meditation - Meditation Music — Monume (1:07)  |  1:07  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-547905/
+pixabay/513747.mp3  <- Meditation — leberch (3:06)  |  3:06  |  https://pixabay.com/music/meditationspiritual-meditation-513747/
+pixabay/443554.mp3  <- Meditation Background — The_Mountain  |  4:36  |  https://pixabay.com/music/meditationspiritual-meditation-background-443554/
+pixabay/176746.mp3  <- Shamanic Meditations — NaturesEye  |  25:57  |  https://pixabay.com/music/pulses-shamanic-meditations-176746/
+pixabay/444137.mp3  <- Spiritual Meditation — The_Mountain  |  5:26  |  https://pixabay.com/music/meditationspiritual-spiritual-meditation-444137/
+pixabay/463389.mp3  <- Meditation — NastelBom  |  9:09  |  https://pixabay.com/music/meditationspiritual-meditation-463389/
+pixabay/514539.mp3  <- Meditation - Meditation Music — SigmaMusicArt  |  5:38  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-514539/
+pixabay/462553.mp3  <- A Meditations — MiroMaxMusic  |  4:12  |  https://pixabay.com/music/meditationspiritual-a-meditations-462553/
+pixabay/461980.mp3  <- Meditations Sleep Background Music — Petrushkasound  |  7:36  |  https://pixabay.com/music/meditationspiritual-meditations-sleep-background-music-461980/
+pixabay/375361.mp3  <- Meditation Ambient — leberch  |  5:06  |  https://pixabay.com/music/meditationspiritual-meditation-ambient-375361/
+pixabay/375362.mp3  <- Deep Meditation — leberch  |  4:50  |  https://pixabay.com/music/ambient-deep-meditation-375362/
+pixabay/380330.mp3  <- Meditation Yoga Relaxing Music — SigmaMusicArt  |  9:48  |  https://pixabay.com/music/ambient-meditation-yoga-relaxing-music-380330/
+pixabay/151790.mp3  <- A Meditations — 35433346  |  6:40  |  https://pixabay.com/music/meditationspiritual-a-meditations-151790/
+pixabay/515629.mp3  <- Meditation - Meditation Music — STAROSTIN  |  9:06  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-515629/
+pixabay/322801.mp3  <- Meditation - Meditation Music — ikoliks_aj  |  4:56  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-322801/
+pixabay/606118.mp3  <- Meditation Music — Verclub_Music (8:07)  |  8:07  |  https://pixabay.com/music/meditationspiritual-meditation-music-606118/
+pixabay/570695.mp3  <- Meditation - Meditation Music — Monume (2:02)  |  2:02  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-570695/
+pixabay/576281.mp3  <- Meditation - Meditation Music — APALONBeats  |  6:24  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-576281/
+pixabay/589064.mp3  <- Meditation - Meditation Music — SolarFLEX  |  1:29  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-589064/
+pixabay/589189.mp3  <- Meditation — MondaMusic  |  5:52  |  https://pixabay.com/music/meditationspiritual-meditation-589189/
+pixabay/589188.mp3  <- Meditation Background — MondaMusic  |  5:07  |  https://pixabay.com/music/meditationspiritual-meditation-background-589188/
+pixabay/588493.mp3  <- Meditation — ARPMedia  |  3:19  |  https://pixabay.com/music/meditationspiritual-meditation-588493/
+pixabay/588438.mp3  <- Meditation - Meditation Music — ARPMedia  |  1:00  |  https://pixabay.com/music/meditationspiritual-meditation-meditation-music-588438/

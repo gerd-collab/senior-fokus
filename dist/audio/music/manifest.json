@@ -1,1031 +1,200 @@
 {
- "generated": 20260925,
  "tracks": [
   {
-   "category": "acoustic",
-   "seconds": 183.48,
-   "title": "Lagerfeuernacht",
-   "file": "acoustic/acoustic-01.ogg",
-   "size_kb": 1456
+   "category": "Pixabay",
+   "seconds": 202.8,
+   "title": "Meditations — MiroMaxMusic",
+   "file": "pixabay/487537.mp3",
+   "size_kb": 3130
   },
   {
-   "category": "acoustic",
-   "seconds": 144.9,
-   "title": "Wanderersruhe",
-   "file": "acoustic/acoustic-02.ogg",
-   "size_kb": 1217
+   "category": "Pixabay",
+   "seconds": 522.7,
+   "title": "Meditation Music — Verclub_Music (8:42)",
+   "file": "pixabay/550885.mp3",
+   "size_kb": 6563
   },
   {
-   "category": "acoustic",
-   "seconds": 161.06,
-   "title": "Herbstduft",
-   "file": "acoustic/acoustic-03.ogg",
-   "size_kb": 1288
+   "category": "Pixabay",
+   "seconds": 324.1,
+   "title": "Meditation - Meditation Music — leberch",
+   "file": "pixabay/523576.mp3",
+   "size_kb": 4810
   },
   {
-   "category": "acoustic",
-   "seconds": 157.73,
-   "title": "Segelklang",
-   "file": "acoustic/acoustic-04.ogg",
-   "size_kb": 1281
+   "category": "Pixabay",
+   "seconds": 328.1,
+   "title": "Meditation — leberch (5:28)",
+   "file": "pixabay/510292.mp3",
+   "size_kb": 4409
   },
   {
-   "category": "acoustic",
-   "seconds": 183.26,
-   "title": "Rindenduft",
-   "file": "acoustic/acoustic-05.ogg",
-   "size_kb": 1589
+   "category": "Pixabay",
+   "seconds": 174.1,
+   "title": "Meditation — leberch (2:54)",
+   "file": "pixabay/509071.mp3",
+   "size_kb": 2263
   },
   {
-   "category": "acoustic",
-   "seconds": 171.78,
-   "title": "Rindennacht",
-   "file": "acoustic/acoustic-06.ogg",
-   "size_kb": 1350
+   "category": "Pixabay",
+   "seconds": 67.6,
+   "title": "Meditation - Meditation Music — Monume (1:07)",
+   "file": "pixabay/547905.mp3",
+   "size_kb": 856
   },
   {
-   "category": "acoustic",
-   "seconds": 158.35,
-   "title": "Kiefernruhe",
-   "file": "acoustic/acoustic-07.ogg",
-   "size_kb": 1344
+   "category": "Pixabay",
+   "seconds": 186.1,
+   "title": "Meditation — leberch (3:06)",
+   "file": "pixabay/513747.mp3",
+   "size_kb": 2311
   },
   {
-   "category": "acoustic",
-   "seconds": 165.99,
-   "title": "Kiefernruhe",
-   "file": "acoustic/acoustic-08.ogg",
-   "size_kb": 1281
+   "category": "Pixabay",
+   "seconds": 276.1,
+   "title": "Meditation Background — The_Mountain",
+   "file": "pixabay/443554.mp3",
+   "size_kb": 3855
   },
   {
-   "category": "acoustic",
-   "seconds": 61.0,
-   "title": "Kieferntanz",
-   "file": "acoustic/acoustic-09.ogg",
-   "size_kb": 512
+   "category": "Pixabay",
+   "seconds": 1557.2,
+   "title": "Shamanic Meditations — NaturesEye",
+   "file": "pixabay/176746.mp3",
+   "size_kb": 27592
   },
   {
-   "category": "acoustic",
-   "seconds": 146.59,
-   "title": "Hofnacht",
-   "file": "acoustic/acoustic-10.ogg",
-   "size_kb": 1202
+   "category": "Pixabay",
+   "seconds": 326.1,
+   "title": "Spiritual Meditation — The_Mountain",
+   "file": "pixabay/444137.mp3",
+   "size_kb": 4735
   },
   {
-   "category": "acoustic",
-   "seconds": 150.81,
-   "bpm": 71.2,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Hofsonne",
-   "file": "acoustic/acoustic-11.ogg",
-   "size_kb": 1279
+   "category": "Pixabay",
+   "seconds": 549.7,
+   "title": "Meditation — NastelBom",
+   "file": "pixabay/463389.mp3",
+   "size_kb": 7593
   },
   {
-   "category": "acoustic",
-   "seconds": 159.5,
-   "bpm": 70.2,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Hofweg",
-   "file": "acoustic/acoustic-12.ogg",
-   "size_kb": 1271
+   "category": "Pixabay",
+   "seconds": 338.4,
+   "title": "Meditation - Meditation Music — SigmaMusicArt",
+   "file": "pixabay/514539.mp3",
+   "size_kb": 4048
   },
   {
-   "category": "acoustic",
-   "seconds": 159.86,
-   "bpm": 66.7,
-   "meter": 3,
-   "mode": "dur",
-   "title": "Rindenruf",
-   "file": "acoustic/acoustic-13.ogg",
-   "size_kb": 1414
+   "category": "Pixabay",
+   "seconds": 252.4,
+   "title": "A Meditations — MiroMaxMusic",
+   "file": "pixabay/462553.mp3",
+   "size_kb": 3744
   },
   {
-   "category": "acoustic",
-   "seconds": 176.21,
-   "bpm": 81.8,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Rindenduft",
-   "file": "acoustic/acoustic-14.ogg",
-   "size_kb": 1467
+   "category": "Pixabay",
+   "seconds": 456.1,
+   "title": "Meditations Sleep Background Music — Petrushkasound",
+   "file": "pixabay/461980.mp3",
+   "size_kb": 5329
   },
   {
-   "category": "acoustic",
-   "seconds": 147.36,
-   "bpm": 73.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Wiesensonne",
-   "file": "acoustic/acoustic-15.ogg",
-   "size_kb": 1218
+   "category": "Pixabay",
+   "seconds": 306.1,
+   "title": "Meditation Ambient — leberch",
+   "file": "pixabay/375361.mp3",
+   "size_kb": 3967
   },
   {
-   "category": "acoustic",
-   "seconds": 162.91,
-   "bpm": 79.6,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Lagerfeuersonne",
-   "file": "acoustic/acoustic-16.ogg",
-   "size_kb": 1226
+   "category": "Pixabay",
+   "seconds": 290.1,
+   "title": "Deep Meditation — leberch",
+   "file": "pixabay/375362.mp3",
+   "size_kb": 3880
   },
   {
-   "category": "acoustic",
-   "seconds": 181.55,
-   "bpm": 69.7,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Segelklang",
-   "file": "acoustic/acoustic-17.ogg",
-   "size_kb": 1457
+   "category": "Pixabay",
+   "seconds": 588.1,
+   "title": "Meditation Yoga Relaxing Music — SigmaMusicArt",
+   "file": "pixabay/380330.mp3",
+   "size_kb": 9925
   },
   {
-   "category": "acoustic",
-   "seconds": 172.86,
-   "bpm": 66.3,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Dorferstanz",
-   "file": "acoustic/acoustic-18.ogg",
-   "size_kb": 1390
+   "category": "Pixabay",
+   "seconds": 400.1,
+   "title": "A Meditations — 35433346",
+   "file": "pixabay/151790.mp3",
+   "size_kb": 5496
   },
   {
-   "category": "acoustic",
-   "seconds": 157.8,
-   "bpm": 71.2,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Wandererssonne",
-   "file": "acoustic/acoustic-19.ogg",
-   "size_kb": 1295
+   "category": "Pixabay",
+   "seconds": 546.1,
+   "title": "Meditation - Meditation Music — STAROSTIN",
+   "file": "pixabay/515629.mp3",
+   "size_kb": 7037
   },
   {
-   "category": "acoustic",
-   "seconds": 161.71,
-   "bpm": 81.7,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Wiesenweg",
-   "file": "acoustic/acoustic-20.ogg",
-   "size_kb": 1296
+   "category": "Pixabay",
+   "seconds": 296.3,
+   "title": "Meditation - Meditation Music — ikoliks_aj",
+   "file": "pixabay/322801.mp3",
+   "size_kb": 3177
   },
   {
-   "category": "acoustic",
-   "seconds": 169.85,
-   "bpm": 74.7,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Hofweise",
-   "file": "acoustic/acoustic-21.ogg",
-   "size_kb": 1368
+   "category": "Pixabay",
+   "seconds": 487.6,
+   "title": "Meditation Music — Verclub_Music (8:07)",
+   "file": "pixabay/606118.mp3",
+   "size_kb": 6658
   },
   {
-   "category": "acoustic",
-   "seconds": 191.55,
-   "bpm": 78.8,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Dorfersduft",
-   "file": "acoustic/acoustic-22.ogg",
-   "size_kb": 1507
+   "category": "Pixabay",
+   "seconds": 122.9,
+   "title": "Meditation - Meditation Music — Monume (2:02)",
+   "file": "pixabay/570695.mp3",
+   "size_kb": 1098
   },
   {
-   "category": "acoustic",
-   "seconds": 168.02,
-   "bpm": 71.1,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Zupfweg",
-   "file": "acoustic/acoustic-23.ogg",
-   "size_kb": 1322
+   "category": "Pixabay",
+   "seconds": 384.1,
+   "title": "Meditation - Meditation Music — APALONBeats",
+   "file": "pixabay/576281.mp3",
+   "size_kb": 3418
   },
   {
-   "category": "acoustic",
-   "seconds": 181.08,
-   "bpm": 68.6,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Lagerfeuerruhe",
-   "file": "acoustic/acoustic-24.ogg",
-   "size_kb": 1418
+   "category": "Pixabay",
+   "seconds": 89.7,
+   "title": "Meditation - Meditation Music — SolarFLEX",
+   "file": "pixabay/589064.mp3",
+   "size_kb": 930
   },
   {
-   "category": "ambient",
-   "seconds": 177.32,
-   "title": "Schweben IX",
-   "file": "ambient/ambient-01.ogg",
-   "size_kb": 1391
+   "category": "Pixabay",
+   "seconds": 352.1,
+   "title": "Meditation — MondaMusic",
+   "file": "pixabay/589189.mp3",
+   "size_kb": 3464
   },
   {
-   "category": "ambient",
-   "seconds": 195.69,
-   "title": "Tiefsee XII",
-   "file": "ambient/ambient-02.ogg",
-   "size_kb": 1555
+   "category": "Pixabay",
+   "seconds": 307.3,
+   "title": "Meditation Background — MondaMusic",
+   "file": "pixabay/589188.mp3",
+   "size_kb": 3220
   },
   {
-   "category": "ambient",
-   "seconds": 196.44,
-   "title": "Klang XI",
-   "file": "ambient/ambient-03.ogg",
-   "size_kb": 1592
+   "category": "Pixabay",
+   "seconds": 199.5,
+   "title": "Meditation — ARPMedia",
+   "file": "pixabay/588493.mp3",
+   "size_kb": 2556
   },
   {
-   "category": "ambient",
-   "seconds": 208.58,
-   "title": "Wolke IX",
-   "file": "ambient/ambient-04.ogg",
-   "size_kb": 1719
-  },
-  {
-   "category": "ambient",
-   "seconds": 223.09,
-   "title": "Aurora III",
-   "file": "ambient/ambient-05.ogg",
-   "size_kb": 1747
-  },
-  {
-   "category": "ambient",
-   "seconds": 188.69,
-   "title": "Weite II",
-   "file": "ambient/ambient-06.ogg",
-   "size_kb": 1480
-  },
-  {
-   "category": "ambient",
-   "seconds": 197.77,
-   "title": "Lichtung II",
-   "file": "ambient/ambient-07.ogg",
-   "size_kb": 1621
-  },
-  {
-   "category": "ambient",
-   "seconds": 202.44,
-   "title": "Tiefsee I",
-   "file": "ambient/ambient-08.ogg",
-   "size_kb": 1631
-  },
-  {
-   "category": "ambient",
-   "seconds": 210.69,
-   "title": "Tiefsee I",
-   "file": "ambient/ambient-09.ogg",
-   "size_kb": 1669
-  },
-  {
-   "category": "ambient",
-   "seconds": 201.45,
-   "title": "Lichtung IV",
-   "file": "ambient/ambient-10.ogg",
-   "size_kb": 1586
-  },
-  {
-   "category": "ambient",
-   "seconds": 179.67,
-   "title": "Schweben XII",
-   "file": "ambient/ambient-11.ogg",
-   "size_kb": 1437
-  },
-  {
-   "category": "ambient",
-   "seconds": 219.05,
-   "title": "Daemmerung IV",
-   "file": "ambient/ambient-12.ogg",
-   "size_kb": 1720
-  },
-  {
-   "category": "ambient",
-   "seconds": 194.47,
-   "title": "Schweben XI",
-   "file": "ambient/ambient-13.ogg",
-   "size_kb": 1521
-  },
-  {
-   "category": "ambient",
-   "seconds": 224.05,
-   "title": "Weite III",
-   "file": "ambient/ambient-14.ogg",
-   "size_kb": 1825
-  },
-  {
-   "category": "ambient",
-   "seconds": 187.51,
-   "title": "Tiefsee V",
-   "file": "ambient/ambient-15.ogg",
-   "size_kb": 1429
-  },
-  {
-   "category": "ambient",
-   "seconds": 217.84,
-   "title": "Daemmerung II",
-   "file": "ambient/ambient-16.ogg",
-   "size_kb": 1711
-  },
-  {
-   "category": "ambient",
-   "seconds": 181.27,
-   "title": "Mondaufgang I",
-   "file": "ambient/ambient-17.ogg",
-   "size_kb": 1441
-  },
-  {
-   "category": "ambient",
-   "seconds": 203.34,
-   "title": "Klang XII",
-   "file": "ambient/ambient-18.ogg",
-   "size_kb": 1698
-  },
-  {
-   "category": "ambient",
-   "seconds": 193.85,
-   "title": "Wolke III",
-   "file": "ambient/ambient-19.ogg",
-   "size_kb": 1513
-  },
-  {
-   "category": "ambient",
-   "seconds": 199.8,
-   "title": "Wolke II",
-   "file": "ambient/ambient-20.ogg",
-   "size_kb": 1577
-  },
-  {
-   "category": "ambient",
-   "seconds": 190.59,
-   "title": "Horizont XI",
-   "file": "ambient/ambient-21.ogg",
-   "size_kb": 1493
-  },
-  {
-   "category": "ambient",
-   "seconds": 186.88,
-   "title": "Horizont VII",
-   "file": "ambient/ambient-22.ogg",
-   "size_kb": 1515
-  },
-  {
-   "category": "ambient",
-   "seconds": 183.61,
-   "title": "Nebel V",
-   "file": "ambient/ambient-23.ogg",
-   "size_kb": 1413
-  },
-  {
-   "category": "ambient",
-   "seconds": 217.01,
-   "title": "Weite II",
-   "file": "ambient/ambient-24.ogg",
-   "size_kb": 1752
-  },
-  {
-   "category": "light",
-   "seconds": 148.58,
-   "bpm": 70.6,
-   "meter": 3,
-   "mode": "moll",
-   "title": "Marmeladensacht",
-   "file": "light/light-01.ogg",
-   "size_kb": 1078
-  },
-  {
-   "category": "light",
-   "seconds": 136.97,
-   "bpm": 86.1,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Fliederblick",
-   "file": "light/light-02.ogg",
-   "size_kb": 948
-  },
-  {
-   "category": "light",
-   "seconds": 138.74,
-   "bpm": 86.7,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Flieder zeit",
-   "file": "light/light-03.ogg",
-   "size_kb": 1043
-  },
-  {
-   "category": "light",
-   "seconds": 161.02,
-   "bpm": 94.5,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Limonadenfreude",
-   "file": "light/light-04.ogg",
-   "size_kb": 1174
-  },
-  {
-   "category": "light",
-   "seconds": 166.34,
-   "bpm": 71.8,
-   "meter": 3,
-   "mode": "dur",
-   "title": "Tropfenlied",
-   "file": "light/light-05.ogg",
-   "size_kb": 1230
-  },
-  {
-   "category": "light",
-   "seconds": 165.2,
-   "bpm": 85.9,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Kringelsprung",
-   "file": "light/light-06.ogg",
-   "size_kb": 1137
-  },
-  {
-   "category": "light",
-   "seconds": 141.11,
-   "bpm": 99.4,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Feenblick",
-   "file": "light/light-07.ogg",
-   "size_kb": 1055
-  },
-  {
-   "category": "light",
-   "seconds": 145.76,
-   "bpm": 96.2,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Kieselmut",
-   "file": "light/light-08.ogg",
-   "size_kb": 1051
-  },
-  {
-   "category": "light",
-   "seconds": 175.95,
-   "bpm": 87.6,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Karussellsonne",
-   "file": "light/light-09.ogg",
-   "size_kb": 1320
-  },
-  {
-   "category": "light",
-   "seconds": 166.29,
-   "bpm": 91.3,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Karussell zeit",
-   "file": "light/light-10.ogg",
-   "size_kb": 1162
-  },
-  {
-   "category": "light",
-   "seconds": 138.88,
-   "bpm": 99.5,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Honig zeit",
-   "file": "light/light-11.ogg",
-   "size_kb": 985
-  },
-  {
-   "category": "light",
-   "seconds": 165.08,
-   "bpm": 87.6,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Bienen zeit",
-   "file": "light/light-12.ogg",
-   "size_kb": 1174
-  },
-  {
-   "category": "light",
-   "seconds": 142.68,
-   "bpm": 96.4,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Sonnenscheintanz",
-   "file": "light/light-13.ogg",
-   "size_kb": 1046
-  },
-  {
-   "category": "light",
-   "seconds": 156.1,
-   "bpm": 91.2,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Feenlied",
-   "file": "light/light-14.ogg",
-   "size_kb": 1137
-  },
-  {
-   "category": "light",
-   "seconds": 139.76,
-   "bpm": 98.6,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Karussellfreude",
-   "file": "light/light-15.ogg",
-   "size_kb": 1031
-  },
-  {
-   "category": "light",
-   "seconds": 137.65,
-   "bpm": 94.7,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Kringelsprung",
-   "file": "light/light-16.ogg",
-   "size_kb": 990
-  },
-  {
-   "category": "light",
-   "seconds": 168.1,
-   "bpm": 94.8,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Kringelmut",
-   "file": "light/light-17.ogg",
-   "size_kb": 1177
-  },
-  {
-   "category": "light",
-   "seconds": 140.25,
-   "bpm": 75.0,
-   "meter": 3,
-   "mode": "dur",
-   "title": "Honighell",
-   "file": "light/light-18.ogg",
-   "size_kb": 1043
-  },
-  {
-   "category": "light",
-   "seconds": 150.48,
-   "bpm": 74.7,
-   "meter": 3,
-   "mode": "dur",
-   "title": "Tropfenglanz",
-   "file": "light/light-19.ogg",
-   "size_kb": 1063
-  },
-  {
-   "category": "light",
-   "seconds": 153.53,
-   "bpm": 99.2,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Karussell zeit",
-   "file": "light/light-20.ogg",
-   "size_kb": 1084
-  },
-  {
-   "category": "light",
-   "seconds": 162.6,
-   "bpm": 84.3,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Feensprung",
-   "file": "light/light-21.ogg",
-   "size_kb": 1170
-  },
-  {
-   "category": "light",
-   "seconds": 159.78,
-   "bpm": 100.0,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Wolkensacht",
-   "file": "light/light-22.ogg",
-   "size_kb": 1184
-  },
-  {
-   "category": "light",
-   "seconds": 175.02,
-   "bpm": 95.2,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Fliedersonne",
-   "file": "light/light-23.ogg",
-   "size_kb": 1224
-  },
-  {
-   "category": "light",
-   "seconds": 164.14,
-   "bpm": 86.5,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Sonnenschein zeit",
-   "file": "light/light-24.ogg",
-   "size_kb": 1154
-  },
-  {
-   "category": "nature",
-   "seconds": 210.17,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Bachlauf X",
-   "file": "nature/nature-01.ogg",
-   "size_kb": 1564
-  },
-  {
-   "category": "nature",
-   "seconds": 234.23,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Waldesrauschen VI",
-   "file": "nature/nature-02.ogg",
-   "size_kb": 1810
-  },
-  {
-   "category": "nature",
-   "seconds": 217.96,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Nachtigall VI",
-   "file": "nature/nature-03.ogg",
-   "size_kb": 1593
-  },
-  {
-   "category": "nature",
-   "seconds": 230.23,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Wipfel VI",
-   "file": "nature/nature-04.ogg",
-   "size_kb": 1611
-  },
-  {
-   "category": "nature",
-   "seconds": 230.2,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Seewind VIII",
-   "file": "nature/nature-05.ogg",
-   "size_kb": 1611
-  },
-  {
-   "category": "nature",
-   "seconds": 213.81,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Tautropfen I",
-   "file": "nature/nature-06.ogg",
-   "size_kb": 1519
-  },
-  {
-   "category": "nature",
-   "seconds": 190.2,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Wipfel VI",
-   "file": "nature/nature-07.ogg",
-   "size_kb": 1411
-  },
-  {
-   "category": "nature",
-   "seconds": 221.76,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Waldesrauschen III",
-   "file": "nature/nature-08.ogg",
-   "size_kb": 1527
-  },
-  {
-   "category": "nature",
-   "seconds": 202.04,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Bachlauf I",
-   "file": "nature/nature-09.ogg",
-   "size_kb": 1445
-  },
-  {
-   "category": "nature",
-   "seconds": 206.21,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Wipfel V",
-   "file": "nature/nature-10.ogg",
-   "size_kb": 1584
-  },
-  {
-   "category": "nature",
-   "seconds": 226.18,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Regenfenster VI",
-   "file": "nature/nature-11.ogg",
-   "size_kb": 1662
-  },
-  {
-   "category": "nature",
-   "seconds": 190.14,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Regenfenster II",
-   "file": "nature/nature-12.ogg",
-   "size_kb": 1355
-  },
-  {
-   "category": "nature",
-   "seconds": 198.06,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Abendchor V",
-   "file": "nature/nature-13.ogg",
-   "size_kb": 1322
-  },
-  {
-   "category": "nature",
-   "seconds": 218.11,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Quellstein II",
-   "file": "nature/nature-14.ogg",
-   "size_kb": 1564
-  },
-  {
-   "category": "nature",
-   "seconds": 209.63,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Morgennebel I",
-   "file": "nature/nature-15.ogg",
-   "size_kb": 1461
-  },
-  {
-   "category": "nature",
-   "seconds": 185.88,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Seewind I",
-   "file": "nature/nature-16.ogg",
-   "size_kb": 1301
-  },
-  {
-   "category": "nature",
-   "seconds": 194.04,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Tautropfen II",
-   "file": "nature/nature-17.ogg",
-   "size_kb": 1337
-  },
-  {
-   "category": "nature",
-   "seconds": 213.98,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Abendchor II",
-   "file": "nature/nature-18.ogg",
-   "size_kb": 1552
-  },
-  {
-   "category": "nature",
-   "seconds": 206.1,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Wipfel V",
-   "file": "nature/nature-19.ogg",
-   "size_kb": 1604
-  },
-  {
-   "category": "nature",
-   "seconds": 214.36,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Vogelkonzert VIII",
-   "file": "nature/nature-20.ogg",
-   "size_kb": 1519
-  },
-  {
-   "category": "nature",
-   "seconds": 221.6,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Tautropfen IV",
-   "file": "nature/nature-21.ogg",
-   "size_kb": 1550
-  },
-  {
-   "category": "nature",
-   "seconds": 209.83,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "moll",
-   "title": "Bachlauf II",
-   "file": "nature/nature-22.ogg",
-   "size_kb": 1555
-  },
-  {
-   "category": "nature",
-   "seconds": 213.77,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Regenfenster VI",
-   "file": "nature/nature-23.ogg",
-   "size_kb": 1476
-  },
-  {
-   "category": "nature",
-   "seconds": 218.05,
-   "bpm": 60.0,
-   "meter": 4,
-   "mode": "dur",
-   "title": "Seewind IV",
-   "file": "nature/nature-24.ogg",
-   "size_kb": 1598
-  },
-  {
-   "category": "piano",
-   "seconds": 208.23,
-   "title": "Sanfterweg",
-   "file": "piano/piano-01.ogg",
-   "size_kb": 1640
-  },
-  {
-   "category": "piano",
-   "seconds": 207.64,
-   "title": "Ruher Klavier",
-   "file": "piano/piano-02.ogg",
-   "size_kb": 1571
-  },
-  {
-   "category": "piano",
-   "seconds": 166.05,
-   "title": "Leiser Licht",
-   "file": "piano/piano-03.ogg",
-   "size_kb": 1180
-  },
-  {
-   "category": "piano",
-   "seconds": 195.16,
-   "title": "Ruher Hafen",
-   "file": "piano/piano-04.ogg",
-   "size_kb": 1483
-  },
-  {
-   "category": "piano",
-   "seconds": 204.32,
-   "title": "Warme Garten",
-   "file": "piano/piano-05.ogg",
-   "size_kb": 1524
-  },
-  {
-   "category": "piano",
-   "seconds": 174.48,
-   "title": "Klarer See",
-   "file": "piano/piano-06.ogg",
-   "size_kb": 1322
-  },
-  {
-   "category": "piano",
-   "seconds": 178.2,
-   "title": "Klarer Zeit",
-   "file": "piano/piano-07.ogg",
-   "size_kb": 1271
-  },
-  {
-   "category": "piano",
-   "seconds": 160.13,
-   "title": "Klarer Nachmittag",
-   "file": "piano/piano-08.ogg",
-   "size_kb": 1168
-  },
-  {
-   "category": "piano",
-   "seconds": 157.7,
-   "title": "Klarer Abend",
-   "file": "piano/piano-09.ogg",
-   "size_kb": 1272
-  },
-  {
-   "category": "piano",
-   "seconds": 203.27,
-   "title": "Warme regen",
-   "file": "piano/piano-10.ogg",
-   "size_kb": 1447
-  },
-  {
-   "category": "piano",
-   "seconds": 157.27,
-   "title": "Stiller Garten",
-   "file": "piano/piano-11.ogg",
-   "size_kb": 1163
-  },
-  {
-   "category": "piano",
-   "seconds": 172.54,
-   "title": "Warme Abend",
-   "file": "piano/piano-12.ogg",
-   "size_kb": 1379
-  },
-  {
-   "category": "piano",
-   "seconds": 165.2,
-   "title": "Klarer Insel",
-   "file": "piano/piano-13.ogg",
-   "size_kb": 1193
-  },
-  {
-   "category": "piano",
-   "seconds": 174.38,
-   "title": "Ruher Nachmittag",
-   "file": "piano/piano-14.ogg",
-   "size_kb": 1152
-  },
-  {
-   "category": "piano",
-   "seconds": 183.65,
-   "title": "Leiser See",
-   "file": "piano/piano-15.ogg",
-   "size_kb": 1339
-  },
-  {
-   "category": "piano",
-   "seconds": 206.2,
-   "title": "Morgenlicht regen",
-   "file": "piano/piano-16.ogg",
-   "size_kb": 1378
-  },
-  {
-   "category": "piano",
-   "seconds": 156.59,
-   "title": "Klarer Abend",
-   "file": "piano/piano-17.ogg",
-   "size_kb": 1207
-  },
-  {
-   "category": "piano",
-   "seconds": 203.94,
-   "title": "Warme Abend",
-   "file": "piano/piano-18.ogg",
-   "size_kb": 1497
-  },
-  {
-   "category": "piano",
-   "seconds": 206.68,
-   "title": "Klarer See",
-   "file": "piano/piano-19.ogg",
-   "size_kb": 1558
-  },
-  {
-   "category": "piano",
-   "seconds": 208.28,
-   "title": "Warme Insel",
-   "file": "piano/piano-20.ogg",
-   "size_kb": 1486
-  },
-  {
-   "category": "piano",
-   "seconds": 204.72,
-   "title": "Ruher Klavier",
-   "file": "piano/piano-21.ogg",
-   "size_kb": 1591
-  },
-  {
-   "category": "piano",
-   "seconds": 178.44,
-   "title": "Sanfter Licht",
-   "file": "piano/piano-22.ogg",
-   "size_kb": 1326
-  },
-  {
-   "category": "piano",
-   "seconds": 182.57,
-   "title": "Klarer See",
-   "file": "piano/piano-23.ogg",
-   "size_kb": 1438
-  },
-  {
-   "category": "piano",
-   "seconds": 182.07,
-   "title": "Stiller regen",
-   "file": "piano/piano-24.ogg",
-   "size_kb": 1357
+   "category": "Pixabay",
+   "seconds": 60.6,
+   "title": "Meditation - Meditation Music — ARPMedia",
+   "file": "pixabay/588438.mp3",
+   "size_kb": 812
   }
  ]
 }

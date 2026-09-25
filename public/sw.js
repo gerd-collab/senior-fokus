@@ -7,11 +7,19 @@
  *    damit der Launcher selbst offline lädt. Metadaten (manifest.json)
  *    laufen über diesen Shell-Pfad; Audio-Dateien in Cache Storage.
  */
-const AUDIO_CACHE = 'fokuspunkt-audio-v1';
+const AUDIO_CACHE = 'fokuspunkt-audio-v2';
 const SHELL_CACHE = 'fokuspunkt-shell-v1';
 
 self.addEventListener('install', () => self.skipWaiting());
-self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+self.addEventListener('activate', (e) => e.waitUntil(
+  (async () => {
+    const keys = await caches.keys();
+    await Promise.all(
+      keys.filter((k) => k !== AUDIO_CACHE && k !== SHELL_CACHE).map((k) => caches.delete(k))
+    );
+    await self.clients.claim();
+  })(),
+));
 
 self.addEventListener('fetch', (e) => {
   const req = e.request;
@@ -64,7 +72,7 @@ async function handleAudio(req, url) {
   }
   if (!range) return base;
   const buf = await base.arrayBuffer();
-  return rangeResponse(buf, range, base.headers.get('Content-Type') || 'audio/ogg');
+  return rangeResponse(buf, range, base.headers.get('Content-Type') || 'audio/mpeg');
 }
 
 async function handleShell(req) {
