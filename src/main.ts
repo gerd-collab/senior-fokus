@@ -1,4 +1,5 @@
 import { APPS, CATEGORIES, type AppInfo, type CategoryId, type CategoryInfo } from './apps';
+import { initMusic } from './music';
 
 type Audience = 'privat' | 'einrichtung';
 
@@ -335,3 +336,6 @@ function syncFromURL(): void {
 window.addEventListener('popstate', syncFromURL);
 
 syncFromURL();
+
+// Globale Musik-Schicht: überlebt iframe-Wechsel, ein Zustand für alle Apps.
+initMusic();

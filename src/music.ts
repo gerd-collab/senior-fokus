@@ -1,5 +1,3 @@
-import { esc } from './util';
-
 /**
  * Fokuspunkt – globale Musik-Schicht (Parent-App).
  *
@@ -63,11 +61,9 @@ class MusicEngine {
   playing = false;
   volume = 0.25;
   private ducked = false;
-  private duckFactor = 1; // 1 = normal, <1 waehrend Duck-Fade
+  private duckFactor = 1; // 1 = normale Lautstaerke, 0 = voll ge-duckt
   private fadeTimer: number | null = null;
   private crossfading = false;
-  private cfFrom = 1;
-  private cfTo = 0;
   private cfStart = 0;
   ready = false;
   onTrack: (t: Track | null) => void = () => {};
@@ -76,6 +72,8 @@ class MusicEngine {
   constructor() {
     this.decks = [makeDeck(), makeDeck()];
     for (const d of this.decks) {
+      // Zeitsteuerung auf BEIDEN Decks: nach jedem Wechsel ist ein anderes aktiv.
+      d.addEventListener('timeupdate', () => this.scheduleNext());
       d.addEventListener('error', () => {
         if (d === this.decks[this.active] && this.playing) this.next();
       });
@@ -97,12 +95,10 @@ class MusicEngine {
 
   private pickNext(): number {
     if (this.order.length === 0 || this.pos >= this.order.length) {
-      let again = shuffled(this.tracks.length, Math.random);
-      if (again.length > 1 && again[0] === this.lastPlayed && this.pos >= this.order.length) {
-        [again[0], again[Math.floor(Math.random() * again.length)]] = [
-          again[Math.floor(Math.random() * again.length)],
-          again[0],
-        ];
+      const again = shuffled(this.tracks.length, Math.random);
+      if (again.length > 1 && again[0] === this.lastPlayed) {
+        const j = Math.floor(Math.random() * again.length);
+        [again[0], again[j]] = [again[j], again[0]];
       }
       this.order = again;
       this.pos = 0;
@@ -116,14 +112,15 @@ class MusicEngine {
     return `/audio/music/${t.file}`;
   }
 
-  private targetLevel(): number {
-    const v = this.volume;
-    return this.ducked ? Math.min(v, DUCK_LEVEL) : v;
+  /** Effektive Master-Lautstaerke inkl. Duck-Fade (duckFactor 1..0). */
+  private currentLevel(): number {
+    const duckFloor = Math.min(this.volume, DUCK_LEVEL);
+    return duckFloor + (this.volume - duckFloor) * this.duckFactor;
   }
 
-  /** Schreibt die Lautstaerke beider Decks (Master x Duck x Crossfade-Form). */
+  /** Schreibt die Lautstaerke beider Decks (Master x Crossfade-Form). */
   private applyVolumes() {
-    const master = this.playing ? this.targetLevel() * this.duckFactor : 0;
+    const master = this.playing ? this.currentLevel() : 0;
     for (let i = 0; i < 2; i++) {
       const d = this.decks[i];
       let shape = i === this.active ? 1 : 0;
@@ -131,7 +128,10 @@ class MusicEngine {
         const el = (performance.now() - this.cfStart) / 1000;
         const k = Math.min(el / XFADE_S, 1);
         shape = i === this.active ? 1 - k : k;
-        if (k >= 1) this.finishCrossfade();
+        if (k >= 1) {
+          this.finishCrossfade();
+          break;
+        }
       }
       d.volume = Math.max(0, Math.min(1, master * shape));
     }
@@ -139,18 +139,19 @@ class MusicEngine {
 
   private tick() {
     this.applyVolumes();
-    if (this.crossfading || Math.abs(this.duckFactor - (this.ducked ? 0.0 : 1.0)) > 1e-3) {
+    if (this.crossfading) return;
+    const goal = this.ducked ? 0 : 1;
+    if (this.duckFactor === goal) {
+      this.stopTimerIfIdle();
       return;
     }
-    // Duck-Fade Richtung Ziel
-    const goal = this.ducked ? 0.0 : 1.0;
-    const step = 0.045; // ~2,5 s bis vollstaendig
-    if (this.duckFactor !== goal) {
-      this.duckFactor = goal === 0
+    const step = 0.045; // bei 70 ms Tick ~1,6 s Duck-Fade
+    this.duckFactor =
+      goal === 0
         ? Math.max(goal, this.duckFactor - step)
         : Math.min(goal, this.duckFactor + step);
-      this.applyVolumes();
-    }
+    this.applyVolumes();
+    if (this.duckFactor === goal) this.stopTimerIfIdle();
   }
 
   private ensureTimer() {
@@ -171,20 +172,19 @@ class MusicEngine {
     this.crossfading = false;
     try {
       old.pause();
+      old.currentTime = 0;
     } catch {
-      /* noop */
+      /* Deck noch nicht bereitbar */
     }
-    old.currentTime = 0;
     this.applyVolumes();
     this.stopTimerIfIdle();
   }
 
-  /** Naechster Track: auf dem inaktiven Deck starten, equal-power-Crossfade. */
+  /** Naechster Track: auf dem inaktiven Deck starten, linear crossgeblendet. */
   private next() {
     if (!this.ready || this.crossfading) return;
     const idx = this.pickNext();
     const track = this.tracks[idx];
-    const from = this.decks[this.active];
     const to = this.decks[1 - this.active];
     to.src = this.url(track);
     to.trackIndex = idx;
@@ -193,10 +193,9 @@ class MusicEngine {
     this.cfStart = performance.now();
     this.ensureTimer();
     void to.play().catch(() => {
-      /* autoplay-Konte: wird durch Gesture-Handler neu versucht */
+      /* Autoplay-Konte: Gesture-Handler versucht neu */
     });
     this.onTrack(track);
-    void from;
   }
 
   /** Zeitsteuerung des aktiven Decks: Wechsel kurz vor Trackende. */
@@ -214,7 +213,6 @@ class MusicEngine {
     d.src = this.url(this.tracks[idx]);
     d.trackIndex = idx;
     this.onTrack(this.tracks[idx]);
-    d.addEventListener('timeupdate', () => this.scheduleNext());
     this.playing = true;
     this.applyVolumes();
     try {
@@ -248,16 +246,24 @@ class MusicEngine {
     localStorage.setItem(LS_VOLUME, String(this.volume));
   }
 
-  /** Duck: Musik weicht Sprache/Hinweisen der Child-App. */
+  /** Duck: Musik weicht Sprachausgabe/Hinweisen einer Child-App. */
   setDuck(on: boolean) {
     if (this.ducked === on) return;
     this.ducked = on;
     this.ensureTimer();
-    this.applyVolumes();
   }
 }
 
 export const music = new MusicEngine();
+
+declare global {
+  interface Window {
+    fokuspunktMusic?: MusicEngine;
+  }
+}
+
+// Debug- und Test-Seit; Child-Apps steuern ueber postMessage (s.o.).
+window.fokuspunktMusic = music;
 
 /* ------------------------------------------------------------------ UI --- */
 
@@ -287,6 +293,7 @@ function buildPill(): {
   const pill = document.createElement('div');
   pill.className = 'music-pill';
   pill.id = 'musicPill';
+  pill.hidden = true;
   pill.innerHTML = `
     <button class="music-btn" type="button" aria-pressed="false"
             title="Hintergrundmusik an- oder ausschalten">${ICON_OFF}</button>
@@ -324,7 +331,7 @@ export function initMusic(): void {
   music.onPlaying = () => paint();
   music.onTrack = (t) => {
     ui.title.textContent = t ? `${t.title} · ${t.category}` : '';
-    ui.title.title = t ? `${esc(t.title)} (${esc(t.category)})` : '';
+    ui.title.title = t ? `${t.title} (${t.category})` : '';
   };
 
   ui.btn.addEventListener('click', async () => {

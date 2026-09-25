@@ -565,7 +565,7 @@ a {
   gap: 0.75rem;
   background: var(--bg-soft);
   border-bottom: 2px solid var(--border);
-  padding: 0.35rem 1rem;
+  padding: 0.35rem 27rem 0.35rem 1rem;
   flex: none;
 }
 
@@ -753,5 +753,81 @@ a {
   }
   .app-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Globale Musik-Schicht (Pill oben rechts) ---------- */
+
+.music-pill {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px 5px 5px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  color: var(--primary);
+}
+
+.music-pill[hidden] {
+  display: none;
+}
+
+.music-btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(47, 111, 95, 0.1);
+  color: var(--primary);
+}
+
+.music-btn:hover {
+  background: rgba(47, 111, 95, 0.18);
+}
+
+.music-pill.is-playing .music-btn {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.music-vol {
+  width: 110px;
+  height: 32px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.music-title {
+  max-width: 230px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.music-pill:not(.is-playing) .music-title {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .music-title {
+    display: none;
+  }
+
+  .music-vol {
+    width: 74px;
+  }
+
+  .embed-header {
+    padding-right: 15rem;
   }
 }

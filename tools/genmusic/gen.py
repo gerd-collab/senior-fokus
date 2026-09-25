@@ -378,31 +378,31 @@ def sec_flags(total_bars):
 
 
 def finalize(bus: Bus, cfg_mix: dict, tail_s: float) -> np.ndarray:
+    """In-place pro Kanal: trockenes Signal + naechste Faltung, minimaler Peak."""
     dry = bus.buf
     n = dry.shape[1]
     rng = cfg_mix["rng"]
-    irL = make_ir(rng, cfg_mix["decay"], cfg_mix["ir_lp"])
-    irR = make_ir(rng, cfg_mix["decay"], cfg_mix["ir_lp"])
-    wet = np.stack(
-        [
-            convolve_oa(np.ascontiguousarray(dry[0]), irL)[:n],
-            convolve_oa(np.ascontiguousarray(dry[1]), irR)[:n],
-        ]
-    ).astype(np.float32)
-    out = dry * 0.94 + wet * cfg_mix["wet"]
-    out = np.stack([highpass(out[c], 27, 2) for c in (0, 1)]).astype(np.float32)
-    seg = out[:, int(0.1 * n) : int(0.95 * n)]
+    wet = cfg_mix["wet"]
+    for c in (0, 1):
+        ir = make_ir(rng, cfg_mix["decay"], cfg_mix["ir_lp"])
+        w = convolve_oa(np.ascontiguousarray(dry[c]), ir)[:n]
+        dry[c] *= 0.94
+        dry[c] += w * wet
+        del w, ir
+    for c in (0, 1):
+        dry[c] = highpass(dry[c], 27, 2)
+    seg = dry[:, int(0.1 * n) : int(0.95 * n)]
     rms = float(np.sqrt(np.mean(seg * seg))) + 1e-9
-    out *= cfg_mix["target_rms"] / rms
-    peak = float(np.max(np.abs(out)))
+    dry *= cfg_mix["target_rms"] / rms
+    peak = float(np.max(np.abs(dry)))
     if peak > 0.98:
-        out *= 0.98 / peak
+        dry *= 0.98 / peak
     fade_start = max(n - int(tail_s * SR), 0)
     ramp = np.linspace(1, 0, n - fade_start, dtype=np.float32) ** 1.3
-    out[:, fade_start:] *= ramp
+    dry[:, fade_start:] *= ramp
     ni = int(0.4 * SR)
-    out[:, :ni] *= np.linspace(0, 1, ni, dtype=np.float32)
-    return out
+    dry[:, :ni] *= np.linspace(0, 1, ni, dtype=np.float32)
+    return dry
 
 
 # ----------------------------------------------------------------- track ---
@@ -619,13 +619,31 @@ def main():
     out_root = Path(a.out)
     cats = [a.only] if a.only else CATEGORIES
     tasks = []
+    manifest = []
     for ci, cat in enumerate(cats):
         (out_root / cat).mkdir(parents=True, exist_ok=True)
         for i in range(1, a.per + 1):
-            tasks.append((cat, i, a.base_seed + ci * 1000 + i, a.bitrate))
-
-    manifest = []
-    n_done = 0
+            ogg = out_root / cat / f"{cat}-{i:02d}.ogg"
+            seed = a.base_seed + ci * 1000 + i
+            if ogg.exists() and ogg.stat().st_size > 50_000:
+                # Resume: fertig gerenderten Track nur in die Manifeste aufnehmen.
+                dur = subprocess.run(
+                    ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                     "-of", "csv=p=0", str(ogg)],
+                    capture_output=True, text=True,
+                ).stdout.strip()
+                manifest.append({
+                    "category": cat,
+                    "seconds": round(float(dur), 2),
+                    "title": make_title(cat, seed, i),
+                    "file": f"{cat}/{cat}-{i:02d}.ogg",
+                    "size_kb": ogg.stat().st_size // 1024,
+                })
+                continue
+            tasks.append((cat, i, seed, a.bitrate))
+    n_done = len(manifest)
+    if n_done:
+        print(f"Resume: {n_done} vorhandene Tracks uebersprungen", flush=True)
     with ProcessPoolExecutor(max_workers=a.jobs) as pool:
         futs = {pool.submit(render_one, t): t for t in tasks}
         for fut in as_completed(futs):
