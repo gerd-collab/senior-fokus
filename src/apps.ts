@@ -457,16 +457,16 @@ export const APPS: readonly AppInfo[] = [
     accent: '#3F7D5A'
   },
   {
-    id: 'atemgarten',
+    id: 'ruhewelten',
     category: 'entspannen',
-    title: 'Atemgarten',
-    subtitle: 'Schauen und zur Ruhe kommen',
+    title: 'Ruhewelten',
+    subtitle: 'Sechs Orte zum Durchatmen',
     description:
-      'Ein meditativer Teich zum Durchatmen: sanft wachsende Blumen, treibende Wolken oder Sternenlicht beobachten – und den Teich berühren, wann immer Sie mögen.',
+      'Sechs ruhige Orte zum Entspannen: Am Meer, Waldruhe, Kaminabend, Sommerregen, Sommerwiese und Sternenruhe. Ein Ort antippen – das Foto wechselt von selbst und bleibt in derselben Welt.',
     url: 'https://atemgarten-meditative-web-app.vercel.app/',
-    screenshot: '/app-screenshots/atemgarten.png',
-    icon: '🌬️',
-    accent: '#8FB5A3'
+    screenshot: '/app-screenshots/ruhewelten.png',
+    icon: '🌄',
+    accent: '#3C5A87'
   },
   {
     id: 'bluetenmandala',
