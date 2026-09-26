@@ -95,10 +95,10 @@ export const APPS: readonly AppInfo[] = [
   {
     id: 'ganze-aufgabe',
     category: 'denken',
-    title: 'Eine ganze Aufgabe lösen',
-    subtitle: 'Schritt für Schritt',
+    title: 'Wir meistern den Alltag',
+    subtitle: 'Briefe und Kommunikation',
     description:
-      'Eine Aufgabe in ruhigen Schritten von Anfang bis Ende durchziehen. Konzentration ohne Zeitdruck.',
+      'Einen Brief in ruhigen Schritten schreiben, prüfen und verschicken. Alltag ohne Zeitdruck.',
     url: 'https://ganze-aufgabe.vercel.app/',
     screenshot: '/app-screenshots/ganze-aufgabe.png',
     icon: '🧭',
